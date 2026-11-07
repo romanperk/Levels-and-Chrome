@@ -23,7 +23,10 @@ const steps = [
 ];
 ---
 
-<Layout title="Levels and Chrome: Cyberpunk 2077 leveling guides">
+<Layout
+  title="Levels and Chrome: Cyberpunk 2077 leveling guides"
+  description="Step-by-step Cyberpunk 2077 leveling guides. Follow a build from level 1 to endgame, with attributes, perks, cyberware and guns for every stage."
+>
   <a slot="header-action" href="#guides" class="font-display text-base font-semibold uppercase tracking-widest text-text no-underline border-b-2 border-chrome py-3">Guides</a>
 
   <section class="cut-br bg-chrome text-night">
@@ -64,6 +67,7 @@ const steps = [
                   <span class={`label inline-flex h-6.5 items-center px-2.5 ${tagClass[edition]}`}>{editionLabels[edition]}</span>
                   <span class="label inline-flex h-6.5 items-center border border-line px-2.5 text-muted">Patch {g.data.patch}</span>
                   {g.data.draft && <span class="label inline-flex h-6.5 items-center border border-dashed border-muted px-2.5 text-muted">Draft</span>}
+                  {!g.data.playtested && <span class="label inline-flex h-6.5 items-center border border-dashed border-muted px-2.5 text-muted">Not yet playtested</span>}
                 </div>
                 <h3 class="font-display text-4xl leading-none font-bold uppercase sm:text-5xl">{g.data.title}</h3>
                 <p class="max-w-2xl text-[17px] leading-relaxed text-soft">{g.data.summary}</p>

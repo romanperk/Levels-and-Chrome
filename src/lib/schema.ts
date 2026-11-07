@@ -15,6 +15,8 @@ export const guideSchema = z.object({
   summary: z.string(),
   // A draft only has to be complete up to its last listed level.
   draft: z.boolean().default(false),
+  // Set once someone has played the whole route. Until then the guide is labeled as untested.
+  playtested: z.boolean().default(false),
   startingAttributes: z.object({
     body: z.number().int(),
     reflexes: z.number().int(),

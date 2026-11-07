@@ -13,7 +13,6 @@
   --color-chrome: #fcee0a;
   --color-hud: #00f0ff;
   --color-signal: #ff003c;
-  --color-signal-ground: #1a0a0f;
 
   --font-display: "Rajdhani", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Barlow", ui-sans-serif, system-ui, sans-serif;
@@ -29,7 +28,7 @@
   }
   a:focus-visible {
     outline: 2px solid var(--color-hud);
-    outline-offset: 2px;
+    outline-offset: -2px; /* inside, because corner cuts clip anything outside */
   }
 }
 

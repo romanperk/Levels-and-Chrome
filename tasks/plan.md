@@ -54,7 +54,7 @@ Scaffold ── Guide page (levels) ── Running totals ─┼── Rule chec
 - [ ] Owner has tested levels 1-19 in play and the format still works.
 
 ### Phase 5: Polish and Launch
-- [ ] Task 13: Apply the visual design
+- [x] Task 13: Apply the visual design
 - [ ] Task 14: Run the pre-launch check
 - [ ] Task 15: Choose a name and deploy (needs owner approval)
 

@@ -45,6 +45,7 @@ From CDPR's [Fan Content Guideline](https://cdprojektred.com/fan-content/) (info
 - Every page displays: "This is an unofficial fan work and is not approved/endorsed by CD PROJEKT RED".
 - No commercial use and no paywall. Reasonable donations are allowed. Ads are not addressed, so V1 has none.
 - Item icons are not mentioned, so **V1 uses no game icons** and no CDPR logos.
+- The theme keeps a bright yellow close to the game's marketing color. This is the owner's decision (2026-11-07). Neither the guideline nor the part of the User Agreement read mentions colors, but the agreement does protect "look and feel" and "trade dress". The unofficial notice stays on every page.
 - Short descriptions are written in our own words.
 - CDPR receives a permanent license to use fan content in connection with its games. Community authors must be told this when publishing opens.
 
@@ -52,6 +53,7 @@ From CDPR's [Fan Content Guideline](https://cdprojektred.com/fan-content/) (info
 
 - **Astro** (current stable, pinned at setup) with TypeScript. Pages are static HTML, and content collections validate guide files at build time, which replaces a custom loader.
 - **Tailwind CSS**, as in the owner's other projects.
+- **Fontsource** for fonts, served with the site, so pages make no requests to Google.
 - **Vitest** for the rule checks.
 - **No React in V1.** Nothing here needs it, and Astro can add it later as interactive islands.
 - **Hosting:** Vercel, on a free `*.vercel.app` subdomain. A custom domain can come later. The subdomain also avoids the game and company names.
@@ -204,6 +206,8 @@ A full database of what the game offers (guns, cyberware, attributes, perks, rel
 - **First guide:** a dual-wield build.
 - **Git:** initialize a repository when implementation starts.
 - **First guide edition:** Phantom Liberty.
+- **Untested guides:** carry a "Not yet playtested" label until `playtested: true` is set.
+- **Accessibility:** screen reader support isn't a goal, because the audience is playing the game. Keyboard use and sensible markup still are.
 - **Site name:** Levels and Chrome, at `levels-and-chrome.vercel.app`, if that name is available at deploy time.
 
 ## Open Questions

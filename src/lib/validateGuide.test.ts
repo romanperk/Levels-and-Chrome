@@ -56,6 +56,7 @@ function guide(extra: Partial<Guide> = {}): Guide {
     patch: '2.5',
     summary: 'Test',
     draft: false,
+    playtested: false,
     startingAttributes: { body: 3, reflexes: 6, technical: 3, intelligence: 3, cool: 6 },
     levels: [
       step(2, { attributes: ['reflexes'], perks: ['aim'] }),

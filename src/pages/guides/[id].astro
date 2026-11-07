@@ -32,7 +32,7 @@ const stageStarts = new Set(guide.cyberwareStages.map((s) => s.from));
 const pad = (n: number) => String(n).padStart(2, '0');
 ---
 
-<Layout title={`${guide.title} (${editionLabels[guide.edition]}) leveling guide`}>
+<Layout title={`${guide.title} (${editionLabels[guide.edition]}) leveling guide`} description={guide.summary}>
   <a
     slot="header-action"
     href="/"
@@ -49,6 +49,7 @@ const pad = (n: number) => String(n).padStart(2, '0');
           <span class={`label inline-flex h-7 items-center px-3 ${isPL ? 'bg-signal text-night' : 'border border-chrome text-chrome'}`}>{editionLabels[guide.edition]}</span>
           <span class="label inline-flex h-7 items-center border border-line px-3 text-muted">Written for patch {guide.patch}</span>
           {guide.draft && <span class="label inline-flex h-7 items-center border border-dashed border-muted px-3 text-muted">Draft · stops at level {guide.levels.at(-1)?.level}</span>}
+          {!guide.playtested && <span class="label inline-flex h-7 items-center border border-dashed border-muted px-3 text-muted">Not yet playtested</span>}
         </div>
         <h1 class="font-display text-[clamp(2.75rem,7vw,5.5rem)] leading-[0.9] font-bold text-chrome uppercase">{guide.title}</h1>
         <p class="max-w-2xl text-lg leading-relaxed text-soft">{guide.summary}</p>
@@ -60,10 +61,12 @@ const pad = (n: number) => String(n).padStart(2, '0');
           {attributeNames.map((a) => (
             <div class="grid grid-cols-[56px_1fr_28px] items-center gap-3 font-mono text-[13px]">
               <dt class="text-muted">{attributeShort[a]}</dt>
-              <span class="block h-1.5 bg-line" aria-hidden="true">
-                <span class="block h-1.5 bg-hud" style={`width: ${(guide.startingAttributes[a] / maxAttribute) * 100}%`}></span>
-              </span>
-              <dd class="text-right">{pad(guide.startingAttributes[a])}</dd>
+              <dd class="contents">
+                <span class="block h-1.5 bg-line" aria-hidden="true">
+                  <span class="block h-1.5 bg-hud" style={`width: ${(guide.startingAttributes[a] / maxAttribute) * 100}%`}></span>
+                </span>
+                <span class="text-right">{pad(guide.startingAttributes[a])}</span>
+              </dd>
             </div>
           ))}
         </dl>
@@ -72,7 +75,7 @@ const pad = (n: number) => String(n).padStart(2, '0');
   </section>
 
   <div class="mx-auto flex max-w-6xl flex-wrap items-start gap-10 px-4 pt-10 pb-16 sm:px-6">
-    <nav aria-label="Jump to level" class="flex w-full flex-col gap-3.5 lg:w-auto lg:flex-[1_1_280px]">
+    <nav id="jump" aria-label="Jump to level" class="flex w-full scroll-mt-4 flex-col gap-3.5 lg:sticky lg:top-4 lg:max-h-[calc(100vh-2rem)] lg:w-auto lg:flex-[1_1_280px] lg:overflow-y-auto">
       <h2 class="font-display text-xl font-bold uppercase">Jump to level</h2>
       <ul class="grid grid-cols-7 gap-1 sm:flex sm:flex-wrap">
         {guide.levels.map((step) => (
@@ -146,4 +149,9 @@ const pad = (n: number) => String(n).padStart(2, '0');
       ))}
     </main>
   </div>
+
+  <a
+    href="#jump"
+    class="fixed right-4 bottom-4 z-10 inline-flex min-h-11 items-center bg-hud px-4 font-display text-base font-bold tracking-widest text-night uppercase no-underline lg:hidden"
+  >Jump</a>
 </Layout>

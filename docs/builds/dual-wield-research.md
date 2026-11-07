@@ -23,11 +23,12 @@ The guides agree on this order: Cool 9, Cool 20, Technical 20, Reflexes, then Bo
 | Start | Character creation | Cool 6, Reflexes 6, Technical 4, Body 3, Intelligence 3 |
 | 2-15 | Cool | Cool 9 at level 4, 15 at level 10, 20 at level 15 |
 | 16-21 | Reflexes **(proposed change)** | Reflexes 12, for better Sandevistans |
-| 22-37 | Technical | Technical 20 |
-| 38-45 | Reflexes | Reflexes 20 |
-| 46-60 | Body | Body 18 |
+| 22-27 | Body **(proposed change)** | Body 9, for survivability |
+| 28-43 | Technical | Technical 20 |
+| 44-51 | Reflexes | Reflexes 20 |
+| 52-60 | Body | Body 18 |
 
-**Still to decide:** following the guides strictly leaves Reflexes at 6 until level 32. One source lists Zetatech Mk.2 needing Reflexes 9 and Mk.3 needing 12, so levels 16-21 go to Reflexes here. Body stays at 3 until level 46, which may feel too fragile, so playtesting may move some points earlier.
+**Still to decide:** following the guides strictly leaves Reflexes at 6 until level 32 and Body at 3 until level 46. The owner raised Reflexes and Body first for Dash and survivability, then focused on Cool, so this route brings both forward. One source lists Zetatech Mk.2 needing Reflexes 9 and Mk.3 needing 12.
 
 ## Perks
 
@@ -68,7 +69,7 @@ Only Power Pistols and Power Revolvers can be dual-wielded. Different guns can b
 
 | Gun | Type | Where |
 |---|---|---|
-| La Chingona Dorada (two) | Power pistol | Jackie's ofrenda at El Coyote Cojo, after Heroes |
+| La Chingona Dorada (two) | Power pistol | Jackie's ofrenda at El Coyote Cojo, after Heroes. Or Herold at the Dogtown black market in EBM Petrochem Stadium; the owner reports this only works if Jackie wasn't sent to Viktor |
 | Kongou | Power pistol | Yorinobu's penthouse, The Heist |
 | Dying Night | Power pistol | Wilson, The Gun side job |
 | Malorian Arms 3516 | Power pistol | Grayson, Chippin' In. Guides suggest it as a late-game partner for a Dorada |
@@ -76,11 +77,18 @@ Only Power Pistols and Power Revolvers can be dual-wielded. Different guns can b
 
 One guide says iconic effects stay active when dual-wielding. Another found that the 3516's melee action is replaced by Heywood Hurricane.
 
+## Slots 2 and 3
+
+No guide we found recommends weapons for the slots beside the dual-wield pair, so this is our own proposal, to test in play.
+
+- **Slot 2, sniper (proposed):** covers the long range that handguns can't. Overwatch appears as a Power sniper in a [community Sandevistan build](https://nukesdragons.com/@nex07/cyberpunk-2077/character/sandevistan). Where to get it is unconfirmed.
+- **Slot 3, close or quiet option (undecided):** keep Kongou for stealth, or try a shotgun. [The Headsman](https://thenerdstash.com/best-shotgun-build-in-cyberpunk-2077-2-0) and Guts appear in shotgun builds, but those builds rely on perks this build doesn't take.
+
 ## Questions for Play
 
 - Are Doradas realistic by level 9, or do they belong in the next stage?
 - What cyberware does Viktor give you in the prologue, and what's worth buying before level 10?
-- What should slots 2 and 3 hold later on? Guides only cover the dual-wield pair.
+- Does a sniper earn its slot, and does a shotgun add anything the dual pistols don't?
 - Which Sandevistans are on sale at level 10, and what do they cost?
 - Does Heywood Hurricane use Q as guides say?
 

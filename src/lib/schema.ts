@@ -1,5 +1,8 @@
 import { z } from 'astro/zod';
 
+// Astro keeps parsed content cached and does not notice changes to this file.
+// If a guide then reports errors that do not match its file, change that file so it is parsed again.
+
 export const attributeNames = ['body', 'reflexes', 'technical', 'intelligence', 'cool'] as const;
 const attribute = z.enum(attributeNames);
 const edition = z.enum(['base-game', 'phantom-liberty']);

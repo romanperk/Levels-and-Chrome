@@ -40,11 +40,11 @@ cyberwareStages:
     weaponSlots:
       - slot: 1
         name: La Chingona Dorada
-        where: Send Jackie to his family at the end of The Heist, finish the Heroes side job, wait 24 hours, then check the ofrenda at El Coyote Cojo. One guide says Herold Lowe at EBM Petrochem Stadium sells it if you missed it
+        where: Send Jackie to his family at the end of The Heist, finish the Heroes side job, wait 24 hours, then check the ofrenda at El Coyote Cojo. Or buy it from Herold at the Dogtown black market, in EBM Petrochem Stadium, reportedly only if you didn't send Jackie to Viktor
         why: Recommended by the guides for dual pistols, and you can own two
         dualWith:
           name: La Chingona Dorada
-          where: Same ofrenda at El Coyote Cojo
+          where: Same ofrenda or vendor
           why: Until you have both, dual-wield Kongou with Dying Night
       - slot: 2
         name: Kongou

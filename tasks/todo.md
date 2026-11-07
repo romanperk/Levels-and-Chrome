@@ -81,7 +81,7 @@ Tests come first for Tasks 7-9, with a failing fixture per rule.
 ## Phase 5: Polish and Launch
 
 - [ ] **Task 13: Apply the visual design** (M)
-  - Accept: A distinct design built for reading while playing, with no CDPR logos, game icons or copied branding. Sample guides removed from production output.
+  - Accept: A distinct design built for reading while playing, with no CDPR logos, game icons or copied branding.
   - Verify: Review at 360 px and desktop, in light and dark surroundings.
   - Depends on: 6, 10. Files: layout, components, styles
 

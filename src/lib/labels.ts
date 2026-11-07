@@ -10,3 +10,12 @@ export const attributeLabels = {
   intelligence: 'Intelligence',
   cool: 'Cool',
 } as const;
+
+// Short forms for the mono totals rows.
+export const attributeShort = {
+  body: 'BOD',
+  reflexes: 'REF',
+  technical: 'TEC',
+  intelligence: 'INT',
+  cool: 'COOL',
+} as const;

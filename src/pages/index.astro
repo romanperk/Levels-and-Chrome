@@ -1,27 +1,97 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
 import { editionLabels } from '../lib/labels';
 
 const guides = await getCollection('guides');
+const rules = (await getEntry('rules', 'current'))!.data;
 const editions = ['phantom-liberty', 'base-game'] as const;
+
+const tagClass = {
+  'phantom-liberty': 'bg-signal text-night',
+  'base-game': 'border border-chrome text-chrome',
+} as const;
+const barClass = {
+  'phantom-liberty': 'border-signal',
+  'base-game': 'border-chrome',
+} as const;
+
+const steps = [
+  { title: 'Jump to your level', text: 'Any level is two taps away. See where the attribute and perk points go.', color: 'border-chrome text-chrome' },
+  { title: 'Check your totals', text: "Running attribute totals and points left, so you know if you've drifted off the route.", color: 'border-hud text-hud' },
+  { title: 'Gear up per stage', text: 'Cyberware, a gun for each weapon slot, and where to get them — and why.', color: 'border-signal text-signal' },
+];
 ---
 
 <Layout title="Levels and Chrome: Cyberpunk 2077 leveling guides">
-  <h1 class="text-2xl font-bold">Levels and Chrome</h1>
-  <p>Step-by-step Cyberpunk 2077 leveling guides.</p>
+  <a slot="header-action" href="#guides" class="font-display text-base font-semibold uppercase tracking-widest text-text no-underline border-b-2 border-chrome py-3">Guides</a>
 
-  {editions.filter((edition) => guides.some((g) => g.data.edition === edition)).map((edition) => (
-    <section class="mt-6">
-      <h2 class="text-xl font-bold">{editionLabels[edition]}</h2>
-      <ul>
-        {guides.filter((g) => g.data.edition === edition).map((g) => (
-          <li class="mt-2">
-            <a href={`/guides/${g.id}/`} class="font-semibold underline">{g.data.title}</a>
-            <p>{g.data.summary} Patch {g.data.patch}.</p>
+  <section class="cut-br bg-chrome text-night">
+    <div class="mx-auto flex max-w-6xl flex-wrap items-end justify-between gap-12 px-4 pt-16 pb-20 sm:px-6 sm:pt-20 sm:pb-24">
+      <div class="flex min-w-0 flex-[999_1_560px] flex-col gap-5">
+        <p class="label text-sm">// Cyberpunk 2077 · leveling routes</p>
+        <h1 class="font-display text-[clamp(3rem,8vw,6.5rem)] leading-[0.88] font-bold uppercase">
+          Every point.<br />Every level.<br />No detours.
+        </h1>
+        <p class="max-w-xl text-lg leading-normal font-medium">
+          Step-by-step leveling guides. Pick a build and edition, then follow it from level 1 to endgame — attributes, perks, cyberware and guns.
+        </p>
+      </div>
+      <dl class="flex flex-[1_1_260px] flex-col gap-3 font-mono text-sm">
+        <div class="flex justify-between border-t-2 border-night pt-2.5"><dt>PATCH</dt><dd>{rules.patch}</dd></div>
+        <div class="flex justify-between border-t-2 border-night pt-2.5">
+          <dt>LEVEL CAP</dt><dd>{rules.editions['base-game'].levelCap} / {rules.editions['phantom-liberty'].levelCap} PL</dd>
+        </div>
+        <div class="flex justify-between border-t-2 border-night pt-2.5"><dt>GUIDES</dt><dd>{guides.length}</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <main id="guides" class="mx-auto flex max-w-6xl flex-col gap-14 px-4 pt-16 pb-12 sm:px-6">
+    {editions.filter((edition) => guides.some((g) => g.data.edition === edition)).map((edition) => (
+      <section class="flex flex-col gap-5">
+        <div class="flex flex-wrap items-center gap-4">
+          <h2 class="font-display text-4xl font-bold uppercase">{editionLabels[edition]}</h2>
+          <span class={`label inline-flex h-6.5 items-center px-2.5 ${tagClass[edition]}`}>Cap {rules.editions[edition].levelCap}</span>
+          <div class="h-px min-w-10 flex-1 bg-line"></div>
+        </div>
+
+        <ul class="flex flex-col gap-4">
+          {guides.filter((g) => g.data.edition === edition).map((g) => (
+            <li>
+              <a href={`/guides/${g.id}/`} class={`cut-tr group flex flex-col gap-4 border-l-4 bg-panel p-6 text-text no-underline sm:p-8 ${barClass[edition]}`}>
+                <div class="flex flex-wrap gap-2.5">
+                  <span class={`label inline-flex h-6.5 items-center px-2.5 ${tagClass[edition]}`}>{editionLabels[edition]}</span>
+                  <span class="label inline-flex h-6.5 items-center border border-line px-2.5 text-muted">Patch {g.data.patch}</span>
+                  {g.data.draft && <span class="label inline-flex h-6.5 items-center border border-dashed border-muted px-2.5 text-muted">Draft</span>}
+                </div>
+                <h3 class="font-display text-4xl leading-none font-bold uppercase sm:text-5xl">{g.data.title}</h3>
+                <p class="max-w-2xl text-[17px] leading-relaxed text-soft">{g.data.summary}</p>
+                <span class="cut-btn mt-2 inline-flex min-h-12 items-center gap-2.5 self-start bg-chrome px-6 font-display text-lg font-bold tracking-wider text-night uppercase group-hover:bg-hud">
+                  Open guide
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M5 12h14" /><path d="m13 6 6 6-6 6" /></svg>
+                </span>
+              </a>
+            </li>
+          ))}
+        </ul>
+      </section>
+    ))}
+
+    <section class="flex flex-col gap-5">
+      <div class="flex items-center gap-4">
+        <h2 class="font-display text-4xl font-bold uppercase">How a guide works</h2>
+        <div class="h-px flex-1 bg-line"></div>
+      </div>
+      <ol class="grid grid-cols-[repeat(auto-fit,minmax(240px,1fr))] gap-4">
+        {steps.map((s, i) => (
+          <li class={`flex flex-col gap-2 border-t-2 pt-4 ${s.color}`}>
+            <span class="font-mono text-sm">{String(i + 1).padStart(2, '0')}</span>
+            <span class="font-display text-[22px] font-bold text-text uppercase">{s.title}</span>
+            <p class="text-base leading-normal text-muted">{s.text}</p>
           </li>
         ))}
-      </ul>
+      </ol>
     </section>
-  ))}
+  </main>
 </Layout>

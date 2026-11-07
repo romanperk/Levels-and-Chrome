@@ -1,1 +1,56 @@
 @import "tailwindcss";
+
+/* Night-market palette: yellow is rare (hero, main action, stage starts),
+   cyan marks anything usable (links, level chips, totals), red is for the
+   Phantom Liberty tag and warnings only. */
+@theme {
+  --color-night: #0a0b10;
+  --color-panel: #12141c;
+  --color-line: #2a2d3a;
+  --color-muted: #9ca0b3;
+  --color-soft: #c5c8d6;
+  --color-text: #e8e6dc;
+  --color-chrome: #fcee0a;
+  --color-hud: #00f0ff;
+  --color-signal: #ff003c;
+  --color-signal-ground: #1a0a0f;
+
+  --font-display: "Rajdhani", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Barlow", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@layer base {
+  html {
+    background-color: var(--color-night);
+    color: var(--color-text);
+    font-family: var(--font-sans);
+    color-scheme: dark;
+  }
+  a:focus-visible {
+    outline: 2px solid var(--color-hud);
+    outline-offset: 2px;
+  }
+}
+
+/* 45° corner cuts. */
+@utility cut-tr {
+  clip-path: polygon(0 0, calc(100% - 24px) 0, 100% 24px, 100% 100%, 0 100%);
+}
+@utility cut-br {
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 48px), calc(100% - 48px) 100%, 0 100%);
+}
+@utility cut-btn {
+  clip-path: polygon(0 0, calc(100% - 14px) 0, 100% 14px, 100% 100%, 14px 100%, 0 calc(100% - 14px));
+}
+@utility cut-logo {
+  clip-path: polygon(0 0, 100% 0, 100% 60%, 60% 100%, 0 100%);
+}
+
+/* Small mono label, used for tags and section kickers. */
+@utility label {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}

@@ -13,12 +13,33 @@ const { title } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0a0b10" />
     <title>{title}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Barlow:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap"
+    />
   </head>
-  <body>
-    <main class="mx-auto max-w-2xl p-4"><slot /></main>
-    <footer class="mx-auto max-w-2xl p-4 text-sm">
-      <p>This is an unofficial fan work and is not approved/endorsed by CD PROJEKT RED</p>
+  <body class="flex min-h-screen flex-col bg-night text-text antialiased">
+    <header class="border-b border-line">
+      <div class="mx-auto flex min-h-16 max-w-6xl flex-wrap items-center justify-between gap-4 px-4 sm:px-6">
+        <a href="/" class="flex items-center gap-3 text-text no-underline">
+          <span class="cut-logo size-6 bg-chrome" aria-hidden="true"></span>
+          <span class="font-display text-2xl font-bold uppercase tracking-wide">Levels <span class="text-chrome">&amp;</span> Chrome</span>
+        </a>
+        <slot name="header-action" />
+      </div>
+    </header>
+
+    <div class="flex-1"><slot /></div>
+
+    <footer class="border-t border-line">
+      <div class="mx-auto flex max-w-6xl flex-wrap justify-between gap-4 px-4 py-6 font-mono text-xs text-muted sm:px-6">
+        <p>This is an unofficial fan work and is not approved/endorsed by CD PROJEKT RED</p>
+        <p>LEVELS &amp; CHROME // FAN-MADE</p>
+      </div>
     </footer>
   </body>
 </html>

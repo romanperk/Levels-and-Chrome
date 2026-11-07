@@ -4,7 +4,7 @@ import Stage from '../../components/Stage.astro';
 import Layout from '../../layouts/Layout.astro';
 import { buildState } from '../../lib/buildState';
 import { validateGuide } from '../../lib/validateGuide';
-import { attributeLabels, editionLabels } from '../../lib/labels';
+import { attributeShort, editionLabels } from '../../lib/labels';
 import { attributeNames } from '../../lib/schema';
 
 export async function getStaticPaths() {
@@ -26,56 +26,124 @@ export async function getStaticPaths() {
 
 const { guide, rules, perks, cyberware } = Astro.props;
 const states = buildState(guide, rules, perks);
-const cyberwareNames = Object.fromEntries(Object.entries(cyberware).map(([id, c]) => [id, c.name]));
+const isPL = guide.edition === 'phantom-liberty';
+const maxAttribute = rules.attributes.maximum;
+const stageStarts = new Set(guide.cyberwareStages.map((s) => s.from));
+const pad = (n: number) => String(n).padStart(2, '0');
 ---
 
 <Layout title={`${guide.title} (${editionLabels[guide.edition]}) leveling guide`}>
-  <p><a href="/" class="underline">All guides</a></p>
-  <h1 class="text-2xl font-bold">{guide.title}</h1>
-  <p><strong>{editionLabels[guide.edition]}</strong> · Written for patch {guide.patch}</p>
-  {guide.draft && <p><strong>Draft:</strong> this guide stops at level {guide.levels.at(-1)?.level}.</p>}
-  <p>{guide.summary}</p>
+  <a
+    slot="header-action"
+    href="/"
+    class="inline-flex min-h-11 items-center gap-2 border border-hud px-4 font-display text-base font-bold tracking-widest text-hud uppercase no-underline hover:border-chrome hover:text-chrome"
+  >
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M19 12H5" /><path d="m11 6-6 6 6 6" /></svg>
+    All guides
+  </a>
 
-  <h2 class="mt-4 font-bold">Starting attributes</h2>
-  <p>{attributeNames.map((a) => `${attributeLabels[a]} ${guide.startingAttributes[a]}`).join(' · ')}</p>
+  <section class="border-b border-line">
+    <div class="mx-auto flex max-w-6xl flex-wrap items-end gap-8 px-4 pt-10 pb-10 sm:gap-12 sm:px-6 sm:pt-14 sm:pb-12">
+      <div class="flex min-w-0 flex-[999_1_560px] flex-col gap-4">
+        <div class="flex flex-wrap gap-2.5">
+          <span class={`label inline-flex h-7 items-center px-3 ${isPL ? 'bg-signal text-night' : 'border border-chrome text-chrome'}`}>{editionLabels[guide.edition]}</span>
+          <span class="label inline-flex h-7 items-center border border-line px-3 text-muted">Written for patch {guide.patch}</span>
+          {guide.draft && <span class="label inline-flex h-7 items-center border border-dashed border-muted px-3 text-muted">Draft · stops at level {guide.levels.at(-1)?.level}</span>}
+        </div>
+        <h1 class="font-display text-[clamp(2.75rem,7vw,5.5rem)] leading-[0.9] font-bold text-chrome uppercase">{guide.title}</h1>
+        <p class="max-w-2xl text-lg leading-relaxed text-soft">{guide.summary}</p>
+      </div>
 
-  <nav aria-label="Jump to level" class="mt-4">
-    <h2 class="font-bold">Jump to level</h2>
-    <ul class="flex flex-wrap gap-1">
-      {guide.levels.map((step) => (
-        <li><a href={`#level-${step.level}`} class="block min-w-11 border p-2 text-center underline">{step.level}</a></li>
+      <div class="cut-tr flex flex-[1_1_300px] flex-col gap-3 bg-panel p-6">
+        <h2 class="label text-muted">Starting attributes</h2>
+        <dl class="flex flex-col gap-3">
+          {attributeNames.map((a) => (
+            <div class="grid grid-cols-[56px_1fr_28px] items-center gap-3 font-mono text-[13px]">
+              <dt class="text-muted">{attributeShort[a]}</dt>
+              <span class="block h-1.5 bg-line" aria-hidden="true">
+                <span class="block h-1.5 bg-hud" style={`width: ${(guide.startingAttributes[a] / maxAttribute) * 100}%`}></span>
+              </span>
+              <dd class="text-right">{pad(guide.startingAttributes[a])}</dd>
+            </div>
+          ))}
+        </dl>
+      </div>
+    </div>
+  </section>
+
+  <div class="mx-auto flex max-w-6xl flex-wrap items-start gap-10 px-4 pt-10 pb-16 sm:px-6">
+    <nav aria-label="Jump to level" class="flex w-full flex-col gap-3.5 lg:w-auto lg:flex-[1_1_280px]">
+      <h2 class="font-display text-xl font-bold uppercase">Jump to level</h2>
+      <ul class="grid grid-cols-7 gap-1 sm:flex sm:flex-wrap">
+        {guide.levels.map((step) => (
+          <li>
+            <a
+              href={`#level-${step.level}`}
+              class={`flex h-11 items-center justify-center font-mono text-[13px] no-underline sm:w-11 ${
+                stageStarts.has(step.level)
+                  ? 'bg-chrome text-night hover:bg-hud'
+                  : 'border border-line text-soft hover:border-hud hover:text-hud'
+              }`}
+            >{pad(step.level)}</a>
+          </li>
+        ))}
+      </ul>
+      <p class="flex items-center gap-2 font-mono text-xs text-muted">
+        <span class="size-3 bg-chrome" aria-hidden="true"></span>New setup starts at this level
+      </p>
+    </nav>
+
+    <main class="flex min-w-0 flex-[999_1_640px] flex-col gap-12">
+      {guide.cyberwareStages.map((stage, i) => (
+        <section class="flex flex-col gap-5">
+          <div class="flex flex-wrap items-baseline gap-3 sm:gap-4">
+            <span class="bg-chrome px-2.5 py-1 font-mono text-[13px] text-night">STAGE {pad(i + 1)}</span>
+            <h2 class="font-display text-3xl leading-none font-bold uppercase sm:text-[44px]">Levels {stage.from}–{stage.to}</h2>
+          </div>
+
+          <Stage stage={stage} cyberware={cyberware} />
+
+          {guide.levels.filter((s) => s.level >= stage.from && s.level <= stage.to).map((step) => {
+            const state = states.get(step.level)!;
+            return (
+              <article id={`level-${step.level}`} class="grid scroll-mt-4 grid-cols-1 gap-3 border-t border-line pt-5 sm:grid-cols-[96px_minmax(0,1fr)] sm:gap-6">
+                <h3 class="flex items-baseline gap-2 sm:flex-col sm:gap-0.5">
+                  <span class="label text-[11px] text-muted">Level</span>
+                  <span class="font-display text-4xl leading-[0.9] font-bold sm:text-[56px]">{pad(step.level)}</span>
+                </h3>
+                <div class="flex min-w-0 flex-col gap-3">
+                  <div class="flex flex-wrap items-center gap-2">
+                    {step.attributes.map((a) => (
+                      <span class="inline-flex h-7.5 items-center bg-hud px-3 font-mono text-[13px] text-night">+1 {attributeShort[a]}</span>
+                    ))}
+                    {step.perks.map((id) => (
+                      <span class="inline-flex min-h-7.5 items-center border border-text px-3 text-sm font-semibold">{perks[id]?.name ?? id}</span>
+                    ))}
+                    {step.perks.length === 0 && state.perkPointsLeft > 0 && (
+                      <span class="inline-flex h-7.5 items-center border border-dashed border-muted px-3 font-mono text-[13px] text-muted">PERK POINT SAVED</span>
+                    )}
+                  </div>
+                  {step.bonus.map((b) => (
+                    <p class="font-mono text-[13px] text-chrome">+{b.amount} {b.type} point{b.amount > 1 ? 's' : ''} · {b.source}</p>
+                  ))}
+                  {step.note && <p class="max-w-2xl text-base leading-relaxed text-soft">{step.note}</p>}
+                  <dl class="flex flex-wrap gap-x-4.5 gap-y-1.5 bg-panel px-3 py-2.5 font-mono text-[13px]">
+                    {attributeNames.map((a) => (
+                      <div class={`flex gap-1 ${step.attributes.includes(a) ? 'text-hud' : 'text-soft'}`}>
+                        <dt>{attributeShort[a]}</dt><dd>{pad(state.attributes[a])}</dd>
+                      </div>
+                    ))}
+                    <div class="flex gap-1 text-muted sm:ml-auto">
+                      <dt>LEFT ·</dt>
+                      <dd>ATTR {state.attributePointsLeft} · PERK {state.perkPointsLeft}{isPL && ` · RELIC ${state.relicPointsLeft}`}</dd>
+                    </div>
+                  </dl>
+                </div>
+              </article>
+            );
+          })}
+        </section>
       ))}
-    </ul>
-  </nav>
-
-  {guide.cyberwareStages.map((stage) => (
-    <section class="mt-6">
-      <h2 class="text-xl font-bold">Levels {stage.from}–{stage.to}</h2>
-      <Stage stage={stage} cyberwareNames={cyberwareNames} />
-
-      {guide.levels.filter((s) => s.level >= stage.from && s.level <= stage.to).map((step) => {
-        const state = states.get(step.level)!;
-        return (
-          <article id={`level-${step.level}`} class="mt-4 scroll-mt-4 border-t pt-2">
-            <h3 class="font-bold">Level {step.level}</h3>
-            {step.attributes.length > 0 && (
-              <p><strong>Attribute:</strong> {step.attributes.map((a) => attributeLabels[a]).join(', ')}</p>
-            )}
-            {step.perks.length > 0 && (
-              <p><strong>Perks:</strong> {step.perks.map((id) => perks[id]?.name ?? id).join(', ')}</p>
-            )}
-            {step.bonus.map((b) => (
-              <p><strong>Bonus:</strong> +{b.amount} {b.type} point{b.amount > 1 ? 's' : ''} from {b.source}</p>
-            ))}
-            {step.note && <p>{step.note}</p>}
-            <p class="mt-1 text-sm">
-              {attributeNames.map((a) => `${attributeLabels[a]} ${state.attributes[a]}`).join(' · ')}
-              <br />
-              Points left: {state.attributePointsLeft} attribute, {state.perkPointsLeft} perk{guide.edition === 'phantom-liberty' && `, ${state.relicPointsLeft} relic`}
-            </p>
-          </article>
-        );
-      })}
-    </section>
-  ))}
+    </main>
+  </div>
 </Layout>

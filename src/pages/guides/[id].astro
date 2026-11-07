@@ -1,0 +1,71 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Stage from '../../components/Stage.astro';
+import Layout from '../../layouts/Layout.astro';
+import { buildState } from '../../lib/buildState';
+import { attributeLabels, editionLabels } from '../../lib/labels';
+import { attributeNames } from '../../lib/schema';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides');
+  return guides.map((guide) => ({ params: { id: guide.id }, props: { guide: guide.data } }));
+}
+
+const { guide } = Astro.props;
+const rules = (await getEntry('rules', 'current'))!.data;
+const perks = Object.fromEntries((await getCollection('perks')).map((p) => [p.id, p.data]));
+const cyberwareNames = Object.fromEntries(
+  (await getCollection('cyberware')).map((c) => [c.id, c.data.name]),
+);
+const states = buildState(guide, rules, perks);
+---
+
+<Layout title={`${guide.title} (${editionLabels[guide.edition]}) leveling guide`}>
+  <p><a href="/" class="underline">All guides</a></p>
+  <h1 class="text-2xl font-bold">{guide.title}</h1>
+  <p><strong>{editionLabels[guide.edition]}</strong> · Written for patch {guide.patch}</p>
+  <p>{guide.summary}</p>
+
+  <h2 class="mt-4 font-bold">Starting attributes</h2>
+  <p>{attributeNames.map((a) => `${attributeLabels[a]} ${guide.startingAttributes[a]}`).join(' · ')}</p>
+
+  <nav aria-label="Jump to level" class="mt-4">
+    <h2 class="font-bold">Jump to level</h2>
+    <ul class="flex flex-wrap gap-1">
+      {guide.levels.map((step) => (
+        <li><a href={`#level-${step.level}`} class="block min-w-11 border p-2 text-center underline">{step.level}</a></li>
+      ))}
+    </ul>
+  </nav>
+
+  {guide.cyberwareStages.map((stage) => (
+    <section class="mt-6">
+      <h2 class="text-xl font-bold">Levels {stage.from}–{stage.to}</h2>
+      <Stage stage={stage} cyberwareNames={cyberwareNames} />
+
+      {guide.levels.filter((s) => s.level >= stage.from && s.level <= stage.to).map((step) => {
+        const state = states.get(step.level)!;
+        return (
+          <article id={`level-${step.level}`} class="mt-4 scroll-mt-4 border-t pt-2">
+            <h3 class="font-bold">Level {step.level}</h3>
+            {step.attributes.length > 0 && (
+              <p><strong>Attribute:</strong> {step.attributes.map((a) => attributeLabels[a]).join(', ')}</p>
+            )}
+            {step.perks.length > 0 && (
+              <p><strong>Perks:</strong> {step.perks.map((id) => perks[id]?.name ?? id).join(', ')}</p>
+            )}
+            {step.bonus.map((b) => (
+              <p><strong>Bonus:</strong> +{b.amount} {b.type} point{b.amount > 1 ? 's' : ''} from {b.source}</p>
+            ))}
+            {step.note && <p>{step.note}</p>}
+            <p class="mt-1 text-sm">
+              {attributeNames.map((a) => `${attributeLabels[a]} ${state.attributes[a]}`).join(' · ')}
+              <br />
+              Points left: {state.attributePointsLeft} attribute, {state.perkPointsLeft} perk{guide.edition === 'phantom-liberty' && `, ${state.relicPointsLeft} relic`}
+            </p>
+          </article>
+        );
+      })}
+    </section>
+  ))}
+</Layout>

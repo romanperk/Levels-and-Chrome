@@ -1,0 +1,2 @@
+# Placeholder data until real guides need real cyberware.
+- { id: sample-optics, name: Sample Optics, slot: eyes, capacity: { "1": 4 } }

@@ -1,0 +1,32 @@
+# Game progression rules for patch 2.5. A one-entry list because the Astro file loader expects entries.
+# Owner confirmed in game: weapon slots, tiers changing with level, points per level.
+# Online sources only, not rechecked on 2.5: everything marked "shortcut:".
+- id: current
+  patch: "2.5"
+
+  editions:
+    # shortcut: totals come from guides written around 2.0, recheck if a guide runs short of points.
+    base-game: { levelCap: 50, attributeTotal: 71, perkTotal: 70 }
+    phantom-liberty: { levelCap: 60, attributeTotal: 81, perkTotal: 80 }
+
+  attributes:
+    # shortcut: from character creation guides, confirm on the next new character.
+    starting: 3
+    creationPoints: 7
+    creationMaximum: 6
+    maximum: 20
+
+  # Shards and skill ranks add more; guides list them as bonuses.
+  pointsPerLevel: { attribute: 1, perk: 1 }
+
+  # Double Trouble lets one slot hold two guns, so it adds no slot.
+  weaponSlots: 3
+
+  capacity:
+    # shortcut: from guides and the wiki (24 + 59 x 3 = 201 at level 60), confirm in game.
+    starting: 24
+    perLevel: 3
+
+  # Lowest level each cyberware tier appears at ripperdocs.
+  # shortcut: tier changes confirmed by owner; exact levels rest on one 2.1 guide and are partly inferred.
+  tierFromLevel: { "1": 1, "2": 10, "3": 20, "4": 30, "5": 40 }

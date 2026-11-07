@@ -1,0 +1,27 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/Layout.astro';
+import { editionLabels } from '../lib/labels';
+
+const guides = await getCollection('guides');
+const editions = ['phantom-liberty', 'base-game'] as const;
+---
+
+<Layout title="Levels and Chrome: Cyberpunk 2077 leveling guides">
+  <h1 class="text-2xl font-bold">Levels and Chrome</h1>
+  <p>Step-by-step Cyberpunk 2077 leveling guides.</p>
+
+  {editions.map((edition) => (
+    <section class="mt-6">
+      <h2 class="text-xl font-bold">{editionLabels[edition]}</h2>
+      <ul>
+        {guides.filter((g) => g.data.edition === edition).map((g) => (
+          <li class="mt-2">
+            <a href={`/guides/${g.id}/`} class="font-semibold underline">{g.data.title}</a>
+            <p>{g.data.summary} Patch {g.data.patch}.</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+  ))}
+</Layout>

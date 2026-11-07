@@ -1,0 +1,13 @@
+# Placeholder guide used to test edition grouping. Not game advice.
+title: Sample Base Game Build
+edition: base-game
+patch: "2.5"
+summary: A placeholder guide for testing edition labels.
+startingAttributes: { body: 6, reflexes: 3, technical: 7, intelligence: 3, cool: 3 }
+levels:
+  - { level: 2, attributes: [body] }
+cyberwareStages:
+  - from: 1
+    to: 2
+    weaponSlots:
+      - { slot: 1, name: "Sample shotgun", where: "Sample vendor", why: "Placeholder reason" }

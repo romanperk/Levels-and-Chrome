@@ -2,7 +2,7 @@
   "name": "levels-and-chrome",
   "version": "1.0.0",
   "scripts": {
-    "test": "vitest run --passWithNoTests",
+    "test": "vitest run",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview"

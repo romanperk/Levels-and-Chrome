@@ -10,6 +10,8 @@ export const guideSchema = z.object({
   edition,
   patch: z.string(),
   summary: z.string(),
+  // A draft only has to be complete up to its last listed level.
+  draft: z.boolean().default(false),
   startingAttributes: z.object({
     body: z.number().int(),
     reflexes: z.number().int(),
@@ -61,6 +63,7 @@ export const perkSchema = z.object({
   requires: z.number().int().default(0),
   prerequisite: z.string().optional(),
   phantomLiberty: z.boolean().default(false),
+  capacityBonus: z.number().int().default(0),
 });
 
 export const cyberwareSchema = z.object({
@@ -94,5 +97,6 @@ export const rulesSchema = z.object({
 
 export type Guide = z.infer<typeof guideSchema>;
 export type Perk = z.infer<typeof perkSchema>;
+export type Cyberware = z.infer<typeof cyberwareSchema>;
 export type Rules = z.infer<typeof rulesSchema>;
 export type AttributeName = (typeof attributeNames)[number];

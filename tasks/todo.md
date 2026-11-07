@@ -42,22 +42,22 @@ Every task must also pass `npm test` and `npm run build` once those exist.
 
 Tests come first for Tasks 7-9, with a failing fixture per rule.
 
-- [ ] **Task 7: Check level order and attribute and perk points (rules 1-3)** (S)
+- [x] **Task 7: Check level order and attribute and perk points (rules 1-3)** (S)
   - Accept: Missing or duplicate levels and overspent attribute, perk or relic points produce messages naming the level.
   - Verify: `npm test`. Files: `src/lib/validateGuide.ts`, `src/lib/validateGuide.test.ts`
   - Depends on: 4.
 
-- [ ] **Task 8: Check perk and cyberware requirements (rules 4-5)** (S)
+- [x] **Task 8: Check perk and cyberware requirements (rules 4-5)** (S)
   - Accept: Unknown perks, unmet attribute or prerequisite requirements, tiers not yet available and exceeded capacity are all reported.
   - Verify: `npm test`. Files: same as Task 7
   - Depends on: 5, 7.
 
-- [ ] **Task 9: Check stages, edition and weapon slots (rules 6-8)** (S)
+- [x] **Task 9: Check stages, edition and weapon slots (rules 6-8)** (S)
   - Accept: Stage gaps or overlaps, Phantom Liberty content in base-game guides, and missing, duplicate or out-of-range weapon slots, plus `dualWith` on more than one slot or before Double Trouble, are all reported.
   - Verify: `npm test`. Files: same as Task 7
   - Depends on: 5, 7.
 
-- [ ] **Task 10: Fail the build on rule errors** (XS)
+- [x] **Task 10: Fail the build on rule errors** (XS)
   - Accept: The guide page validates in `getStaticPaths` and throws every error for that guide.
   - Verify: Temporarily break the sample guide and see the build fail with its level. Restore it.
   - Depends on: 8, 9. Files: `src/pages/guides/[id].astro`, sample guides
@@ -67,12 +67,12 @@ Tests come first for Tasks 7-9, with a failing fixture per rule.
 ## Phase 4: Real Content
 
 - [ ] **Task 11: Write levels 1-10 of the dual-wield guide** (M)
-  - Accept: The first stage is complete, including Double Trouble timing if it falls in range, and all items used are in `src/data/`. Levels past 10 stay out of the file until the format is proven, so this draft uses a temporary partial flag or a local rule override that Task 12 removes.
+  - Accept: The first stage is complete, including Double Trouble timing if it falls in range, and all items used are in `src/data/`. Levels past 10 stay out of the file until the format is proven, so this draft uses `draft: true`, which Task 12 removes.
   - Verify: Build passes. **Owner plays levels 1-10 on a new character using only this page** and reports what was missing.
   - Depends on: 1, 10; first guide edition chosen. Files: `src/content/guides/dual-wield.yaml`, `src/data/*.yaml`
 
 - [ ] **Task 12: Finish the dual-wield guide** (M)
-  - Accept: The guide reaches the edition's cap, with no partial flag remaining. Fixes from the Task 11 playtest are in.
+  - Accept: The guide reaches the edition's cap, with `draft: true` removed. Fixes from the Task 11 playtest are in.
   - Verify: Build passes with all rules. Owner completes the playthrough (spec success criterion 8).
   - Depends on: 11. Files: same as Task 11
 

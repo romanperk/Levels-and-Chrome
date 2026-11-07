@@ -4,8 +4,8 @@ import type { Guide, Perk, Rules } from './schema';
 
 const rules = { pointsPerLevel: { attribute: 1, perk: 1 } } as Rules;
 const perks: Record<string, Perk> = {
-  shot: { name: 'Shot', tree: 'cool', requires: 0, phantomLiberty: false },
-  relic: { name: 'Relic', tree: 'relic', requires: 0, phantomLiberty: true },
+  shot: { name: 'Shot', tree: 'cool', requires: 0, phantomLiberty: false, capacityBonus: 0 },
+  relic: { name: 'Relic', tree: 'relic', requires: 0, phantomLiberty: true, capacityBonus: 0 },
 };
 const empty = { attributes: [], perks: [], bonus: [] };
 const guide = (levels: Guide['levels']) =>

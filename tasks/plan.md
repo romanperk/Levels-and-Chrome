@@ -38,10 +38,10 @@ Scaffold ── Guide page (levels) ── Running totals ─┼── Rule chec
 - [ ] A sample guide reads correctly at 360 px. Owner reviews the format before rules depend on it.
 
 ### Phase 3: Rule Checks
-- [ ] Task 7: Check level order and attribute and perk points (rules 1-3)
-- [ ] Task 8: Check perk and cyberware requirements (rules 4-5)
-- [ ] Task 9: Check stages, edition and weapon slots (rules 6-8)
-- [ ] Task 10: Fail the build on rule errors
+- [x] Task 7: Check level order and attribute and perk points (rules 1-3)
+- [x] Task 8: Check perk and cyberware requirements (rules 4-5)
+- [x] Task 9: Check stages, edition and weapon slots (rules 6-8)
+- [x] Task 10: Fail the build on rule errors
 
 ### Checkpoint: Rule Checks
 - [ ] All eight rules are tested. A broken sample guide fails the build, naming the level.

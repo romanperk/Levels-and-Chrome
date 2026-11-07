@@ -2,3 +2,4 @@
 - { id: sample-pistol-perk, name: Sample Pistol Perk, tree: cool, requires: 4 }
 - { id: sample-reload-perk, name: Sample Reload Perk, tree: reflexes, requires: 4 }
 - { id: sample-relic-perk, name: Sample Relic Perk, tree: relic, phantomLiberty: true }
+- { id: double-trouble, name: Double Trouble, tree: cool, requires: 9 }

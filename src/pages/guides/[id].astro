@@ -3,27 +3,37 @@ import { getCollection, getEntry } from 'astro:content';
 import Stage from '../../components/Stage.astro';
 import Layout from '../../layouts/Layout.astro';
 import { buildState } from '../../lib/buildState';
+import { validateGuide } from '../../lib/validateGuide';
 import { attributeLabels, editionLabels } from '../../lib/labels';
 import { attributeNames } from '../../lib/schema';
 
 export async function getStaticPaths() {
   const guides = await getCollection('guides');
-  return guides.map((guide) => ({ params: { id: guide.id }, props: { guide: guide.data } }));
+  const rules = (await getEntry('rules', 'current'))!.data;
+  const perks = Object.fromEntries((await getCollection('perks')).map((p) => [p.id, p.data]));
+  const cyberware = Object.fromEntries((await getCollection('cyberware')).map((c) => [c.id, c.data]));
+
+  const problems = guides.flatMap((guide) =>
+    validateGuide(guide.data, { rules, perks, cyberware }).map((error) => `${guide.id}: ${error}`),
+  );
+  if (problems.length > 0) throw new Error(`Guide rules broken:\n${problems.join('\n')}`);
+
+  return guides.map((guide) => ({
+    params: { id: guide.id },
+    props: { guide: guide.data, rules, perks, cyberware },
+  }));
 }
 
-const { guide } = Astro.props;
-const rules = (await getEntry('rules', 'current'))!.data;
-const perks = Object.fromEntries((await getCollection('perks')).map((p) => [p.id, p.data]));
-const cyberwareNames = Object.fromEntries(
-  (await getCollection('cyberware')).map((c) => [c.id, c.data.name]),
-);
+const { guide, rules, perks, cyberware } = Astro.props;
 const states = buildState(guide, rules, perks);
+const cyberwareNames = Object.fromEntries(Object.entries(cyberware).map(([id, c]) => [id, c.name]));
 ---
 
 <Layout title={`${guide.title} (${editionLabels[guide.edition]}) leveling guide`}>
   <p><a href="/" class="underline">All guides</a></p>
   <h1 class="text-2xl font-bold">{guide.title}</h1>
   <p><strong>{editionLabels[guide.edition]}</strong> · Written for patch {guide.patch}</p>
+  {guide.draft && <p><strong>Draft:</strong> this guide stops at level {guide.levels.at(-1)?.level}.</p>}
   <p>{guide.summary}</p>
 
   <h2 class="mt-4 font-bold">Starting attributes</h2>

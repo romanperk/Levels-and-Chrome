@@ -119,17 +119,17 @@ cyberwareStages:
       - { name: "Example item", where: "Vendor or quest", why: "Reason" }
 ```
 
-`bonus.type` is `perk`, `attribute`, `relic` or `capacity`. Weapon and gear names are free text in V1, so the names aren't checked. The game database will replace them later.
+Each stage lists the full cyberware and weapon setup by its last level, not only what's new. `bonus.type` is `perk`, `attribute`, `relic` or `capacity`. Weapon and gear names are free text in V1, so the names aren't checked. The game database will replace them later.
 
 ## Rule Checks
 
 `validateGuide` reports every problem, not only the first, and each error names the level.
 
-1. Every level from 2 to the edition's cap appears exactly once.
+1. Every level from 2 to the edition's cap appears exactly once, in order. A guide marked `draft: true` only has to be complete up to its last listed level.
 2. Attribute points spent never exceed points available. No attribute goes above its maximum.
 3. Perk points spent never exceed points earned so far, including bonuses. The same applies to relic points.
 4. Each perk exists, its attribute requirement is met, and its prerequisite is taken first.
-5. Cyberware exists, its tier is available by that stage's `from` level, and capacity isn't exceeded.
+5. Cyberware exists, its tier is available by the stage's last level, and capacity isn't exceeded by the stage's full setup. Capacity counts level gains, `capacity` bonuses and perks with `capacityBonus` (such as Edgerunner).
 6. Cyberware stages run in order, without gaps or overlaps, up to the cap.
 7. A base-game guide uses no Phantom Liberty perks, cyberware or relic points.
 8. Each stage has at least one weapon slot. Slot numbers are unique and within the game's slot count. At most one slot has `dualWith`, and only once Double Trouble has been taken.

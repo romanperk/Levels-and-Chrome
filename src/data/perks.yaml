@@ -3,3 +3,10 @@
 - { id: sample-reload-perk, name: Sample Reload Perk, tree: reflexes, requires: 4 }
 - { id: sample-relic-perk, name: Sample Relic Perk, tree: relic, phantomLiberty: true }
 - { id: double-trouble, name: Double Trouble, tree: cool, requires: 9 }
+# Dual-wield branch. Requirements from third-party guides for patch 2.5; prerequisites inferred from the tree layout.
+- { id: double-trouble-2, name: Double Trouble Rank 2 (Heywood Hurricane), tree: cool, requires: 9, prerequisite: double-trouble }
+- { id: two-right-hands, name: Two Right Hands, tree: cool, requires: 9, prerequisite: double-trouble }
+- { id: triple-tequila, name: Triple Tequila, tree: cool, requires: 9, prerequisite: double-trouble }
+- { id: keep-em-comin, name: "Keep 'Em Comin'", tree: cool, requires: 9, prerequisite: double-trouble }
+- { id: splash-of-love, name: Splash of Love, tree: cool, requires: 9, prerequisite: double-trouble-2 }
+- { id: focus, name: Focus, tree: cool, requires: 9 }

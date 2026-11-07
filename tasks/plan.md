@@ -47,11 +47,11 @@ Scaffold ── Guide page (levels) ── Running totals ─┼── Rule chec
 - [ ] All eight rules are tested. A broken sample guide fails the build, naming the level.
 
 ### Phase 4: Real Content
-- [ ] Task 11: Write levels 1-10 of the dual-wield guide
+- [ ] Task 11: Write levels 1-9 of the dual-wield guide
 - [ ] Task 12: Finish the dual-wield guide
 
 ### Checkpoint: Content
-- [ ] Owner has tested levels 1-10 in play and the format still works.
+- [ ] Owner has tested levels 1-9 in play and the format still works.
 
 ### Phase 5: Polish and Launch
 - [ ] Task 13: Apply the visual design
@@ -66,7 +66,7 @@ Scaffold ── Guide page (levels) ── Running totals ─┼── Rule chec
 | Risk | Impact | Mitigation |
 |---|---|---|
 | 2.5 changed progression, so researched numbers are wrong | High | Task 1 comes first, and all numbers stay in `src/data/` |
-| Points from shards and skill ranks make level-by-level routes unreliable | High | Test levels 1-10 in play (Task 11) before writing the rest |
+| Points from shards and skill ranks make level-by-level routes unreliable | High | Test levels 1-9 in play (Task 11) before writing the rest |
 | Writing every level by hand is tiring | Medium | Finish one guide before adding others. The owner reviews and plays it, rather than authoring everything alone |
 | Base game and Phantom Liberty dual-wield details conflict between sources | Medium | Task 1 confirms them. Only the chosen edition is written first |
 | Fan guideline changes, or the EULA conflicts with it | Low | Read the User Agreement and EULA before launch (Task 14) |

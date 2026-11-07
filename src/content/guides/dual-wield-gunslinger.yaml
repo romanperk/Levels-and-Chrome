@@ -1,0 +1,56 @@
+# First real guide. Draft combining online guides; the owner corrects it while playing.
+title: Dual-Wield Gunslinger
+edition: phantom-liberty
+patch: "2.5"
+summary: Two Power handguns from level 4, built around Double Trouble and Cool, with the two La Chingona Doradas as soon as you can get them.
+draft: true
+startingAttributes: { body: 3, reflexes: 6, technical: 4, intelligence: 3, cool: 6 }
+levels:
+  - level: 2
+    attributes: [cool]
+    note: Save your perk point. You need three at level 4. Reflexes 6 from character creation is for your first Sandevistan, which one guide says needs it.
+  - level: 3
+    attributes: [cool]
+    note: Save your perk point again. If you find a perk shard, spend it on the next perk in this guide.
+  - level: 4
+    attributes: [cool]
+    perks: [double-trouble, double-trouble-2, two-right-hands]
+    note: Cool 9 unlocks dual-wielding. Equip any two Power pistols or revolvers. Each gun deals 37.5% less damage, so try it before spending more if you're unsure. Heywood Hurricane replaces your quick melee attack.
+  - level: 5
+    attributes: [cool]
+    perks: [triple-tequila]
+    note: Kills while dual-wielding now build stacks, and Heywood Hurricane spends them for more damage.
+  - level: 6
+    attributes: [cool]
+    perks: [keep-em-comin]
+    note: Kills now refill stamina.
+  - level: 7
+    attributes: [cool]
+    perks: [splash-of-love]
+    note: This completes the Double Trouble branch, for six points in total.
+  - level: 8
+    attributes: [cool]
+    perks: [focus]
+  - level: 9
+    attributes: [cool]
+    note: Save this perk point for Deadeye at Cool 15, which comes at level 10. Save your eddies too, because better Sandevistans start appearing at level 10. One guide advises having this setup ready before the Clampdown side job.
+cyberwareStages:
+  - from: 1
+    to: 9
+    weaponSlots:
+      - slot: 1
+        name: La Chingona Dorada
+        where: Send Jackie to his family at the end of The Heist, finish the Heroes side job, wait 24 hours, then check the ofrenda at El Coyote Cojo. One guide says Herold Lowe at EBM Petrochem Stadium sells it if you missed it
+        why: Recommended by the guides for dual pistols, and you can own two
+        dualWith:
+          name: La Chingona Dorada
+          where: Same ofrenda at El Coyote Cojo
+          why: Until you have both, dual-wield Kongou with Dying Night
+      - slot: 2
+        name: Kongou
+        where: Yorinobu Arasaka's penthouse during The Heist
+        why: A suppressed Power pistol for quiet kills. There's only one, so it can't be paired with itself
+      - slot: 3
+        name: Dying Night
+        where: Wilson in Watson, during The Gun side job
+        why: A strong early Power pistol, and your other gun before you have the Doradas

@@ -17,23 +17,25 @@ levels:
     perks: [double-trouble, double-trouble-2, two-right-hands]
     note: Cool 9 unlocks dual-wielding. Equip any two Power pistols or revolvers. Each gun deals 37.5% less damage, so try it before spending more if you're unsure. Heywood Hurricane replaces your quick melee attack.
   - level: 5
-    attributes: [cool]
+    attributes: [reflexes]
     perks: [triple-tequila]
     note: Kills while dual-wielding now build stacks, and Heywood Hurricane spends them for more damage.
   - level: 6
-    attributes: [cool]
+    attributes: [reflexes]
     perks: [keep-em-comin]
     note: Kills now refill stamina.
   - level: 7
-    attributes: [cool]
+    attributes: [reflexes]
     perks: [splash-of-love]
     note: This completes the Double Trouble branch, for six points in total.
   - level: 8
-    attributes: [cool]
+    attributes: [technical]
     perks: [focus]
+    note: With dual-wielding unlocked, attribute points now build a base in Reflexes, Technical and Body. Cool goes back to the top of the list at level 19.
   - level: 9
-    attributes: [cool]
-    note: Save this perk point for Deadeye at Cool 15, which comes at level 10. Save your eddies too, because better Sandevistans start appearing at level 10. One guide advises having this setup ready before the Clampdown side job.
+    attributes: [technical]
+    perks: [dash]
+    note: Save your eddies, because better Sandevistans start appearing at level 10. One guide advises having this setup ready before the Clampdown side job.
 cyberwareStages:
   - from: 1
     to: 9

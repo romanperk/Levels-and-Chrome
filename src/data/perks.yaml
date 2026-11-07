@@ -6,3 +6,5 @@
 - { id: keep-em-comin, name: "Keep 'Em Comin'", tree: cool, requires: 9, prerequisite: double-trouble }
 - { id: splash-of-love, name: Splash of Love, tree: cool, requires: 9, prerequisite: double-trouble-2 }
 - { id: focus, name: Focus, tree: cool, requires: 9 }
+# shortcut: Dash requirement assumed from the lowest perk tier, confirm in game.
+- { id: dash, name: Dash, tree: reflexes, requires: 4 }

@@ -16,19 +16,21 @@ Reflexes 20 and Body 18 fit the Sandevistan focus, but the two sources that reco
 
 ## Attribute Route
 
-The guides agree on this order: Cool 9, Cool 20, Technical 20, Reflexes, then Body.
+Online guides say Cool 9, Cool 20, Technical 20, Reflexes, then Body. The owner prefers a base in every attribute before maxing Cool, which is the route used here.
 
 | Levels | Spend on | Result |
 |---|---|---|
 | Start | Character creation | Cool 6, Reflexes 6, Technical 4, Body 3, Intelligence 3 |
-| 2-15 | Cool | Cool 9 at level 4, 15 at level 10, 20 at level 15 |
-| 16-21 | Reflexes **(proposed change)** | Reflexes 12, for better Sandevistans |
-| 22-27 | Body **(proposed change)** | Body 9, for survivability |
-| 28-43 | Technical | Technical 20 |
-| 44-51 | Reflexes | Reflexes 20 |
+| 2-4 | Cool | Cool 9, for dual-wielding |
+| 5-7 | Reflexes | Reflexes 9 |
+| 8-12 | Technical | Technical 9 |
+| 13-18 | Body | Body 9 |
+| 19-29 | Cool | Cool 20 |
+| 30-40 | Technical | Technical 20 |
+| 41-51 | Reflexes | Reflexes 20 |
 | 52-60 | Body | Body 18 |
 
-**Still to decide:** following the guides strictly leaves Reflexes at 6 until level 32 and Body at 3 until level 46. The owner raised Reflexes and Body first for Dash and survivability, then focused on Cool, so this route brings both forward. One source lists Zetatech Mk.2 needing Reflexes 9 and Mk.3 needing 12.
+This delays Deadeye (Cool 15) to level 24 and Run 'N' Gun (Cool 20) to level 29, in exchange for survivability and mobility earlier.
 
 ## Perks
 
@@ -79,16 +81,18 @@ One guide says iconic effects stay active when dual-wielding. Another found that
 
 ## Slots 2 and 3
 
-No guide we found recommends weapons for the slots beside the dual-wield pair, so this is our own proposal, to test in play.
+No guide we found recommends weapons for the slots beside the dual-wield pair, so this is our own choice, to test in play.
 
-- **Slot 2, sniper (proposed):** covers the long range that handguns can't. Overwatch appears as a Power sniper in a [community Sandevistan build](https://nukesdragons.com/@nex07/cyberpunk-2077/character/sandevistan). Where to get it is unconfirmed.
-- **Slot 3, close or quiet option (undecided):** keep Kongou for stealth, or try a shotgun. [The Headsman](https://thenerdstash.com/best-shotgun-build-in-cyberpunk-2077-2-0) and Guts appear in shotgun builds, but those builds rely on perks this build doesn't take.
+- **Slot 2, sniper:** covers the long range that handguns can't, and [snipers and handguns share the Cool tree](https://progameguides.com/?p=659265). Overwatch appears as a Power sniper in a [community Sandevistan build](https://nukesdragons.com/@nex07/cyberpunk-2077/character/sandevistan). Where to get it is unconfirmed.
+- **Slot 3, assault rifle:** covers mid-range. One guide puts [assault rifles under Reflexes](https://eip.gg/cyberpunk-2077/guides/perks/), which this build maxes, though another source doesn't mention them there. No specific rifle chosen yet.
+- **Not a shotgun:** [shotgun perks are under Body](https://primagames.com/gaming/cyberpunk-2077-2-0-skill-guide-best-perks-and-attributes), the build's lowest priority, and dual pistols already cover close range.
+- **Early game:** Kongou and Dying Night stay in these slots until better options appear.
 
 ## Questions for Play
 
 - Are Doradas realistic by level 9, or do they belong in the next stage?
 - What cyberware does Viktor give you in the prologue, and what's worth buying before level 10?
-- Does a sniper earn its slot, and does a shotgun add anything the dual pistols don't?
+- Do the sniper and assault rifle earn their slots in play?
 - Which Sandevistans are on sale at level 10, and what do they cost?
 - Does Heywood Hurricane use Q as guides say?
 

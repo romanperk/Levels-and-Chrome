@@ -1,2 +1,6 @@
-# Placeholder data until real guides need real cyberware.
-- { id: sample-optics, name: Sample Optics, slot: eyes, capacity: { "1": 4 } }
+# Capacity costs by tier are still unknown. Add `capacity: { "2": cost }` to an item once read from the game; the rule check then counts it.
+- { id: dynalar-sandevistan, name: Dynalar Sandevistan, slot: operating system }
+- { id: ballistic-coprocessor, name: Ballistic Coprocessor, slot: hands }
+- { id: kerenzikov, name: Kerenzikov, slot: nervous system }
+- { id: reinforced-tendons, name: Reinforced Tendons, slot: legs }
+- { id: blood-pump, name: Blood Pump, slot: circulatory }

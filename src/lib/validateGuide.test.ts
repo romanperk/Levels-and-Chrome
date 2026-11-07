@@ -27,6 +27,7 @@ const game: GameData = {
     optics: { name: 'Optics', slot: 'eyes', capacity: { '1': 5, '2': 8 }, phantomLiberty: false },
     heavy: { name: 'Heavy', slot: 'arms', capacity: { '1': 40 }, phantomLiberty: false },
     agent: { name: 'Agent', slot: 'eyes', capacity: { '1': 1 }, phantomLiberty: true },
+    mystery: { name: 'Mystery', slot: 'legs', phantomLiberty: false },
   },
 };
 
@@ -169,6 +170,18 @@ describe('validateGuide', () => {
     });
     it('reports exceeded capacity', () => {
       const cyberwareStages = [stage(1, 4, { cyberware: [item('heavy')] })];
+      expect(errorsFor({ cyberwareStages })).toContain('Stage 1-4: cyberware uses 40 capacity, 13 available');
+    });
+    it('accepts cyberware with an unknown capacity cost', () => {
+      const cyberwareStages = [stage(1, 2), stage(3, 4, { cyberware: [item('mystery', 2)] })];
+      expect(errorsFor({ cyberwareStages })).toEqual([]);
+    });
+    it('still checks the tier of cyberware with an unknown cost', () => {
+      const cyberwareStages = [stage(1, 2, { cyberware: [item('mystery', 2)] }), stage(3, 4)];
+      expect(errorsFor({ cyberwareStages })).toContain("Stage 1-2: Mystery Tier 2 isn't available until level 3");
+    });
+    it('still reports exceeded capacity beside an unknown cost', () => {
+      const cyberwareStages = [stage(1, 4, { cyberware: [item('heavy'), item('mystery')] })];
       expect(errorsFor({ cyberwareStages })).toContain('Stage 1-4: cyberware uses 40 capacity, 13 available');
     });
     it('counts capacity from shards', () => {

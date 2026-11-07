@@ -8,3 +8,13 @@
 - { id: focus, name: Focus, tree: cool, requires: 9 }
 # shortcut: Dash requirement assumed from the lowest perk tier, confirm in game.
 - { id: dash, name: Dash, tree: reflexes, requires: 4 }
+- { id: all-things-cyber, name: All Things Cyber, tree: technical, requires: 4 }
+- { id: all-things-cyber-2, name: All Things Cyber Rank 2, tree: technical, requires: 4, prerequisite: all-things-cyber }
+- { id: renaissance-punk, name: Renaissance Punk, tree: technical, requires: 9, prerequisite: all-things-cyber-2 }
+# shortcut: requirements below are assumed, because no source we could read gives them. Confirm in game.
+- { id: license-to-chrome, name: License to Chrome, tree: technical, requires: 9 }
+- { id: air-dash, name: Air Dash, tree: reflexes, requires: 9, prerequisite: dash }
+- { id: cant-touch-this, name: "Can't Touch This", tree: reflexes, requires: 9 }
+- { id: steady-grip, name: Steady Grip, tree: reflexes, requires: 9 }
+- { id: muscle-memory, name: Muscle Memory, tree: reflexes, requires: 9 }
+- { id: adrenaline-rush, name: Adrenaline Rush, tree: body, requires: 9 }

@@ -66,9 +66,9 @@ Tests come first for Tasks 7-9, with a failing fixture per rule.
 
 ## Phase 4: Real Content
 
-- [ ] **Task 11: Write levels 1-9 of the dual-wield guide** (M)
-  - Accept: The first stage is complete, including Double Trouble timing if it falls in range, and all items used are in `src/data/`. Levels past 9 stay out of the file until the format is proven, so this draft uses `draft: true`, which Task 12 removes.
-  - Verify: Build passes. **Owner plays levels 1-9 on a new character using only this page** and reports what was missing.
+- [ ] **Task 11: Write levels 1-19 of the dual-wield guide** (M)
+  - Accept: The first stage is complete, including Double Trouble timing if it falls in range, and all items used are in `src/data/`. Levels past 19 stay out of the file until the format is proven, so this draft uses `draft: true`, which Task 12 removes.
+  - Verify: Build passes. **Owner plays levels 1-19 on a new character using only this page** and reports what was missing.
   - Depends on: 1, 10; first guide edition chosen. Files: `src/content/guides/dual-wield.yaml`, `src/data/*.yaml`
 
 - [ ] **Task 12: Finish the dual-wield guide** (M)

@@ -1,7 +1,7 @@
 import { z } from 'astro/zod';
 
 // Astro keeps parsed content cached and does not notice changes to this file.
-// If a guide then reports errors that do not match its file, change that file so it is parsed again.
+// After editing a schema, restart the dev server. If a guide still reports errors that do not match its file, change that file so it is parsed again.
 
 export const attributeNames = ['body', 'reflexes', 'technical', 'intelligence', 'cool'] as const;
 const attribute = z.enum(attributeNames);
@@ -72,8 +72,8 @@ export const perkSchema = z.object({
 export const cyberwareSchema = z.object({
   name: z.string(),
   slot: z.string(),
-  // Capacity cost by tier, which rises with quality.
-  capacity: z.record(z.string(), z.number().int()),
+  // Capacity cost by tier. Left out while unknown, and the rule check then skips the item's cost.
+  capacity: z.record(z.string(), z.number().int()).optional(),
   phantomLiberty: z.boolean().default(false),
 });
 

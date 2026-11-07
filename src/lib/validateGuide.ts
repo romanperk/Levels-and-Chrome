@@ -144,6 +144,8 @@ function checkCyberware(guide: Guide, game: GameData): string[] {
       if (availableFrom > stage.to) {
         errors.push(`${at}: ${cyberware.name} Tier ${item.tier} isn't available until level ${availableFrom}`);
       }
+      // shortcut: items with unknown costs count as 0, so capacity can't be fully checked until they're filled in.
+      if (!cyberware.capacity) continue;
       const cost = cyberware.capacity[item.tier];
       if (cost === undefined) errors.push(`${at}: ${cyberware.name} has no capacity cost for Tier ${item.tier}`);
       else used += cost;

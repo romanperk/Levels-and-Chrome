@@ -36,6 +36,41 @@ levels:
     attributes: [technical]
     perks: [dash]
     note: Save your eddies, because better Sandevistans start appearing at level 10. One guide advises having this setup ready before the Clampdown side job.
+  - level: 10
+    attributes: [technical]
+    perks: [all-things-cyber]
+    note: Tier 2 cyberware reaches ripperdocs around now. Buy the Sandevistan first.
+  - level: 11
+    attributes: [technical]
+    perks: [all-things-cyber-2]
+    note: Integumentary and skeletal cyberware now cost less capacity.
+  - level: 12
+    attributes: [technical]
+    perks: [renaissance-punk]
+    note: Technical 9. This perk adds capacity for each attribute at 9 or higher, so it grows as your base fills in.
+  - level: 13
+    attributes: [body]
+    perks: [air-dash]
+    note: Attribute points now go to Body, for survivability.
+  - level: 14
+    attributes: [body]
+    perks: [cant-touch-this]
+  - level: 15
+    attributes: [body]
+    perks: [steady-grip]
+  - level: 16
+    attributes: [body]
+    perks: [muscle-memory]
+  - level: 17
+    attributes: [body]
+    perks: [license-to-chrome]
+  - level: 18
+    attributes: [body]
+    perks: [adrenaline-rush]
+    note: Body 9 completes your base, with Reflexes, Technical and Body all at 9.
+  - level: 19
+    attributes: [cool]
+    note: Back to Cool, up to 20 at level 29. Save this perk point for Deadeye at Cool 15, which comes at level 24, unless you see a Cool perk you want sooner.
 cyberwareStages:
   - from: 1
     to: 9
@@ -56,3 +91,43 @@ cyberwareStages:
         name: Dying Night
         where: Wilson in Watson, during The Gun side job
         why: A strong early Power pistol, and your other gun before you have the Doradas
+  - from: 10
+    to: 19
+    cyberware:
+      - id: dynalar-sandevistan
+        tier: 2
+        where: Any ripperdoc
+        why: One guide lists Dynalar from level 10, with a 50% time slow. Falcon replaces it at level 30
+      - id: ballistic-coprocessor
+        tier: 2
+        where: Any ripperdoc
+        why: Improves Power weapon ricochets, and the guides pick it for your hands
+      - id: kerenzikov
+        tier: 2
+        where: Any ripperdoc
+        why: The dual-wield guides pick it for your nervous system
+      - id: reinforced-tendons
+        tier: 2
+        where: Any ripperdoc
+        why: Double jump, for more ways to stay mobile
+      - id: blood-pump
+        tier: 2
+        where: Any ripperdoc
+        why: The guides pick it for survivability. Buy it last if capacity runs short
+    weaponSlots:
+      - slot: 1
+        name: La Chingona Dorada
+        where: The ofrenda at El Coyote Cojo, or Herold at the Dogtown black market
+        why: Your main weapons. Get them now if you haven't yet
+        dualWith:
+          name: La Chingona Dorada
+          where: Same ofrenda or vendor
+          why: Until you have both, keep dual-wielding Kongou with Dying Night
+      - slot: 2
+        name: Any Power sniper rifle
+        where: Vendors or loot
+        why: Covers long range, and shares the Cool tree with handguns
+      - slot: 3
+        name: Any assault rifle
+        where: Vendors or loot
+        why: Covers middle range. Keep Kongou here if you'd rather have a quiet option

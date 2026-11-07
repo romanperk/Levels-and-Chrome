@@ -16,12 +16,12 @@ const game: GameData = {
     tierFromLevel: { '1': 1, '2': 3 },
   },
   perks: {
-    aim: { name: 'Aim', tree: 'reflexes', requires: 4, phantomLiberty: false, capacityBonus: 0 },
-    steady: { name: 'Steady', tree: 'reflexes', requires: 4, prerequisite: 'aim', phantomLiberty: false, capacityBonus: 0 },
-    chrome: { name: 'Chrome', tree: 'technical', requires: 0, phantomLiberty: false, capacityBonus: 50 },
-    'double-trouble': { name: 'Double Trouble', tree: 'cool', requires: 3, phantomLiberty: false, capacityBonus: 0 },
-    relic: { name: 'Relic', tree: 'relic', requires: 0, phantomLiberty: true, capacityBonus: 0 },
-    spy: { name: 'Spy', tree: 'cool', requires: 0, phantomLiberty: true, capacityBonus: 0 },
+    aim: { name: 'Aim', tree: 'reflexes', requires: 4, phantomLiberty: false, capacityBonus: 0, cost: 1 },
+    steady: { name: 'Steady', tree: 'reflexes', requires: 4, prerequisite: 'aim', phantomLiberty: false, capacityBonus: 0, cost: 1 },
+    chrome: { name: 'Chrome', tree: 'technical', requires: 0, phantomLiberty: false, capacityBonus: 50, cost: 1 },
+    'double-trouble': { name: 'Double Trouble', tree: 'cool', requires: 3, phantomLiberty: false, capacityBonus: 0, cost: 1 },
+    relic: { name: 'Relic', tree: 'relic', requires: 0, phantomLiberty: true, capacityBonus: 0, cost: 1 },
+    spy: { name: 'Spy', tree: 'cool', requires: 0, phantomLiberty: true, capacityBonus: 0, cost: 1 },
   },
   cyberware: {
     optics: { name: 'Optics', slot: 'eyes', capacity: { '1': 5, '2': 8 }, phantomLiberty: false },

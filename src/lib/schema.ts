@@ -67,6 +67,7 @@ export const perkSchema = z.object({
   prerequisite: z.string().optional(),
   phantomLiberty: z.boolean().default(false),
   capacityBonus: z.number().int().default(0),
+  cost: z.number().int().default(1),
 });
 
 export const cyberwareSchema = z.object({

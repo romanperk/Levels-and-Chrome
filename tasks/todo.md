@@ -71,7 +71,7 @@ Tests come first for Tasks 7-9, with a failing fixture per rule.
   - Verify: Build passes. **Owner plays levels 1-19 on a new character using only this page** and reports what was missing.
   - Depends on: 1, 10; first guide edition chosen. Files: `src/content/guides/dual-wield.yaml`, `src/data/*.yaml`
 
-- [ ] **Task 12: Finish the dual-wield guide** (M)
+- [ ] **Task 12: Finish the dual-wield guide** (M) *(written through level 60; owner's playthrough still pending)*
   - Accept: The guide reaches the edition's cap, with `draft: true` removed. Fixes from the Task 11 playtest are in.
   - Verify: Build passes with all rules. Owner completes the playthrough (spec success criterion 8).
   - Depends on: 11. Files: same as Task 11

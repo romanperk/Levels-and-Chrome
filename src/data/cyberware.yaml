@@ -1,6 +1,15 @@
-# Capacity costs by tier are still unknown. Add `capacity: { "2": cost }` to an item once read from the game; the rule check then counts it.
-- { id: dynalar-sandevistan, name: Dynalar Sandevistan, slot: operating system }
+# Capacity costs by tier. Tier 5 costs come from a summary of one guide and are unverified.
+# Items without `capacity` are skipped by the capacity check. Add e.g. `capacity: { "2": 18 }` once read from the game.
+- { id: zetatech-sandevistan-mk1, name: Zetatech Sandevistan Mk.1, slot: operating system }
+- { id: zetatech-sandevistan-mk2, name: Zetatech Sandevistan Mk.2, slot: operating system }
+- { id: zetatech-sandevistan-mk3, name: Zetatech Sandevistan Mk.3, slot: operating system }
+- { id: apogee-sandevistan, name: Militech Apogee Sandevistan, slot: operating system, capacity: { "5": 44 }, phantomLiberty: true }
 - { id: ballistic-coprocessor, name: Ballistic Coprocessor, slot: hands }
+- { id: shock-absorber, name: Shock Absorber, slot: hands }
 - { id: kerenzikov, name: Kerenzikov, slot: nervous system }
 - { id: reinforced-tendons, name: Reinforced Tendons, slot: legs }
 - { id: blood-pump, name: Blood Pump, slot: circulatory }
+- { id: biomonitor, name: Biomonitor, slot: circulatory }
+- { id: cockatrice-optics, name: Kiroshi Cockatrice Optics, slot: face, capacity: { "5": 30 }, phantomLiberty: true }
+- { id: peripheral-inverse, name: Peripheral Inverse, slot: integumentary, capacity: { "5": 32 }, phantomLiberty: true }
+- { id: axolotl, name: Axolotl, slot: frontal cortex, capacity: { "5": 55 } }

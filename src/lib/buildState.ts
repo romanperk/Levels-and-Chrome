@@ -36,8 +36,9 @@ export function buildState(
     }
 
     for (const id of step.perks) {
-      if (perks[id]?.tree === 'relic') relicPointsLeft -= 1;
-      else perkPointsLeft -= 1;
+      const cost = perks[id]?.cost ?? 1;
+      if (perks[id]?.tree === 'relic') relicPointsLeft -= cost;
+      else perkPointsLeft -= cost;
     }
 
     states.set(step.level, {

@@ -1,133 +1,362 @@
-# First real guide. Draft combining online guides; the owner corrects it while playing.
+# Combines online guides with the owner's preferences. The owner corrects it while playing.
 title: Dual-Wield Gunslinger
 edition: phantom-liberty
 patch: "2.5"
-summary: Two Power handguns from level 4, built around Double Trouble and Cool, with the two La Chingona Doradas as soon as you can get them.
-draft: true
+summary: Two La Chingona Doradas and a Sandevistan, with dual-wielding from level 4 and a base in every attribute before maxing Cool.
 startingAttributes: { body: 3, reflexes: 6, technical: 4, intelligence: 3, cool: 6 }
 levels:
   - level: 2
     attributes: [cool]
-    note: Save your perk point. You need three at level 4. Reflexes 6 from character creation is for your first Sandevistan, which one guide says needs it.
+    note: "Save your perk point, because you need three at level 4. Reflexes 6 from character creation is what your first Sandevistan requires."
   - level: 3
     attributes: [cool]
-    note: Save your perk point again. If you find a perk shard, spend it on the next perk in this guide.
+    note: "Save your perk point again. If you find a perk shard at any point, spend it on the next perk in this guide and you'll stay ahead of the route."
   - level: 4
     attributes: [cool]
     perks: [double-trouble, double-trouble-2, two-right-hands]
-    note: Cool 9 unlocks dual-wielding. Equip any two Power pistols or revolvers. Each gun deals 37.5% less damage, so try it before spending more if you're unsure. Heywood Hurricane replaces your quick melee attack.
+    note: "Cool 9 unlocks dual-wielding. Equip any two Power pistols or revolvers. Each gun deals 37.5% less damage, and Heywood Hurricane replaces your quick melee attack."
   - level: 5
     attributes: [reflexes]
     perks: [triple-tequila]
-    note: Kills while dual-wielding now build stacks, and Heywood Hurricane spends them for more damage.
+    note: "Kills while dual-wielding now build stacks, and Heywood Hurricane spends them for more damage."
   - level: 6
     attributes: [reflexes]
     perks: [keep-em-comin]
-    note: Kills now refill stamina.
+    note: "Kills now refill stamina, and more so with Triple Tequila stacks."
   - level: 7
     attributes: [reflexes]
     perks: [splash-of-love]
-    note: This completes the Double Trouble branch, for six points in total.
+    note: "This completes the Double Trouble branch, for six points in total. Reflexes 9 is reached, so you can start on Dash."
   - level: 8
     attributes: [technical]
-    perks: [focus]
-    note: With dual-wielding unlocked, attribute points now build a base in Reflexes, Technical and Body. Cool goes back to the top of the list at level 19.
+    perks: [slippery]
   - level: 9
     attributes: [technical]
     perks: [dash]
-    note: Save your eddies, because better Sandevistans start appearing at level 10. One guide advises having this setup ready before the Clampdown side job.
+    note: "Save your eddies, because your first Sandevistan costs about 6,000 and arrives at level 10. One guide advises having dual-wielding ready before the Clampdown side job."
   - level: 10
     attributes: [technical]
-    perks: [all-things-cyber]
-    note: Tier 2 cyberware reaches ripperdocs around now. Buy the Sandevistan first.
+    perks: [dash-2]
+    note: "You can now dash, and Tier 2 cyberware reaches ripperdocs. Buy the Sandevistan first."
   - level: 11
     attributes: [technical]
-    perks: [all-things-cyber-2]
-    note: Integumentary and skeletal cyberware now cost less capacity.
+    perks: [focus]
   - level: 12
     attributes: [technical]
-    perks: [renaissance-punk]
-    note: Technical 9. This perk adds capacity for each attribute at 9 or higher, so it grows as your base fills in.
+    perks: [focus-2]
+    note: "Focus mode is unlocked. Technical 9 is reached, which opens the capacity perks."
   - level: 13
     attributes: [body]
-    perks: [air-dash]
-    note: Attribute points now go to Body, for survivability.
+    perks: [all-things-cyber]
+    note: "Attribute points now go to Body, for survivability."
   - level: 14
     attributes: [body]
-    perks: [cant-touch-this]
+    perks: [all-things-cyber-2]
+    note: "Integumentary and skeletal cyberware now cost less capacity."
   - level: 15
     attributes: [body]
-    perks: [steady-grip]
+    perks: [renaissance-punk]
+    bonus:
+      - { type: capacity, amount: 12, source: "Renaissance Punk, with Cool, Reflexes and Technical at 9" }
+    note: "Renaissance Punk adds 4 capacity for each attribute at 9 or higher."
   - level: 16
     attributes: [body]
-    perks: [muscle-memory]
+    perks: [painkiller]
+    note: "You now slowly regain health in combat."
   - level: 17
     attributes: [body]
-    perks: [license-to-chrome]
+    perks: [cant-touch-this]
+    note: "You're now much harder to hit during a dash."
   - level: 18
     attributes: [body]
-    perks: [adrenaline-rush]
-    note: Body 9 completes your base, with Reflexes, Technical and Body all at 9.
+    perks: [steady-grip]
+    bonus:
+      - { type: capacity, amount: 4, source: "Renaissance Punk, now that Body is at 9" }
+    note: "Body 9 completes your base, with Cool, Reflexes, Technical and Body all at 9. You can now shoot while dashing."
   - level: 19
     attributes: [cool]
-    note: Back to Cool, up to 20 at level 29. Save this perk point for Deadeye at Cool 15, which comes at level 24, unless you see a Cool perk you want sooner.
+    perks: [head-to-head]
+    note: "Cool now climbs to 20 by level 29."
+  - level: 20
+    attributes: [cool]
+    perks: [deep-breath, vulnerability-analytics]
+    bonus:
+      - { type: relic, amount: 3, source: "Songbird, in the Phantom Liberty quest Dog Eat Dog" }
+    note: "Relic perks use relic points, not perk points. If you start Phantom Liberty later than this, take Vulnerability Analytics when you get the points. Tier 3 cyberware arrives, and it can be tied to an attribute, so choose Cool or Reflexes. Recraft your iconic guns as you go to raise their tier."
+  - level: 21
+    attributes: [cool]
+    perks: [muscle-memory]
+  - level: 22
+    attributes: [cool]
+    perks: [driver-update]
+  - level: 23
+    attributes: [cool]
+    note: "Save this perk point. You need two at level 24."
+  - level: 24
+    attributes: [cool]
+    perks: [deadeye, deadeye-2]
+    note: "Cool 15 opens Deadeye."
+  - level: 25
+    attributes: [cool]
+    perks: [deadeye-3]
+    note: "Deadeye mode is unlocked while your stamina is above 85%."
+  - level: 26
+    attributes: [cool]
+    perks: [high-noon]
+  - level: 27
+    attributes: [cool]
+    perks: [long-shot]
+  - level: 28
+    attributes: [cool]
+    perks: [california-reaper]
+  - level: 29
+    attributes: [cool]
+    perks: [run-n-gun]
+    note: "Cool 20 is reached. Hip-firing no longer costs stamina, though sources disagree on whether that covers all guns or only pistols."
+  - level: 30
+    attributes: [reflexes]
+    perks: [quick-draw]
+    note: "Attribute points now go to Reflexes, which better Sandevistans need. Tier 4 cyberware arrives."
+  - level: 31
+    attributes: [reflexes]
+    perks: [nerves-of-tungsten-steel]
+    note: "Deadeye headshots and weak-spot hits now always crit."
+  - level: 32
+    attributes: [reflexes]
+    perks: [multitasker]
+  - level: 33
+    attributes: [reflexes]
+    perks: [glutton-for-war]
+    note: "Reflexes 12 is reached, so you can now use the Zetatech Mk.3. These next perks build toward extra healing."
+  - level: 34
+    attributes: [reflexes]
+    perks: [health-freak]
+  - level: 35
+    attributes: [reflexes]
+    perks: [health-freak-2, machine-learning]
+    bonus:
+      - { type: relic, amount: 3, source: "Songbird, around halfway through the Phantom Liberty story" }
+    note: "Health Freak adds a healing item charge. Relic points beyond these come from yellow Militech terminals around Dogtown."
+  - level: 36
+    attributes: [reflexes]
+    perks: [air-dash]
+  - level: 37
+    attributes: [reflexes]
+    perks: [air-dash-2]
+  - level: 38
+    attributes: [reflexes]
+    perks: [air-dash-3]
+    note: "Reflexes 18 is reached. If you can't equip the Apogee at level 40, the Falcon also needs Reflexes 18."
+  - level: 39
+    attributes: [reflexes]
+    perks: [aerodynamic]
+  - level: 40
+    attributes: [reflexes]
+    perks: [tailwind]
+    note: "Reflexes 20 is reached, and Tier 5 cyberware arrives. Buy the Apogee first."
+  - level: 41
+    attributes: [technical]
+    perks: [comeback-kid]
+    note: "Attribute points now go to Technical, for capacity and cyberware perks. Body perks follow for healing."
+  - level: 42
+    attributes: [technical]
+    perks: [speed-junkie]
+  - level: 43
+    attributes: [technical]
+    perks: [dorph-head]
+  - level: 44
+    attributes: [technical]
+    note: "Save this perk point. You need three at level 46."
+  - level: 45
+    attributes: [technical]
+    note: "Save this perk point too."
+  - level: 46
+    attributes: [technical]
+    perks: [license-to-chrome, license-to-chrome-2, license-to-chrome-3]
+    note: "Technical 15 opens all three ranks of License to Chrome, which adds armor and a skeleton slot."
+  - level: 47
+    attributes: [technical]
+    perks: [extended-warranty]
+  - level: 48
+    attributes: [technical]
+    perks: [ambidextrous]
+    note: "This adds a second hand cyberware slot."
+  - level: 49
+    attributes: [technical]
+    perks: [cyborg]
+  - level: 50
+    attributes: [technical]
+    perks: [pyromania]
+  - level: 51
+    attributes: [technical]
+    perks: [edgerunner]
+    note: "Technical 20 is reached. You can now go up to 50 capacity over your limit, losing 0.5% max health per point. Only go over if you need to."
+  - level: 52
+    attributes: [body]
+    perks: [pyromania-2]
+    note: "Attribute points now go to Body, the last priority."
+  - level: 53
+    attributes: [body]
+    perks: [pyromania-3]
+  - level: 54
+    attributes: [body]
+    perks: [ticking-time-bomb]
+    note: "Using your Sandevistan now sends out a delayed stun around you."
+  - level: 55
+    attributes: [body]
+    note: "Save this perk point. You need three at level 57."
+  - level: 56
+    attributes: [body]
+    note: "Save this perk point too."
+  - level: 57
+    attributes: [body]
+    perks: [adrenaline-rush, adrenaline-rush-2, adrenaline-rush-3]
+    note: "Body 15 opens all three ranks of Adrenaline Rush at once, for more health and a health shield."
+  - level: 58
+    attributes: [body]
+    perks: [juggernaut]
+  - level: 59
+    attributes: [body]
+    perks: [calm-mind]
+  - level: 60
+    attributes: [body]
+    perks: [unstoppable-force]
+    note: "The build is complete: Cool 20, Reflexes 20, Technical 20, Body 18, Intelligence 3. Any perk shards you found are spare points, so spend them on whatever fits how you play."
 cyberwareStages:
   - from: 1
     to: 9
     weaponSlots:
       - slot: 1
-        name: La Chingona Dorada
-        where: Send Jackie to his family at the end of The Heist, finish the Heroes side job, wait 24 hours, then check the ofrenda at El Coyote Cojo. Or buy it from Herold at the Dogtown black market, in EBM Petrochem Stadium, reportedly only if you didn't send Jackie to Viktor
-        why: Recommended by the guides for dual pistols, and you can own two
-        dualWith:
-          name: La Chingona Dorada
-          where: Same ofrenda or vendor
-          why: Until you have both, dual-wield Kongou with Dying Night
+        name: "La Chingona Dorada"
+        where: "Send Jackie to his family at the end of The Heist, finish the Heroes side job, wait 24 hours, then check the ofrenda at El Coyote Cojo. Or buy it from Herold at the Dogtown black market, in EBM Petrochem Stadium, reportedly only if you didn't send Jackie to Viktor"
+        why: "Your main weapons, and you can own two"
+        dualWith: { name: "La Chingona Dorada", where: "Same ofrenda or vendor", why: "Until you have both, dual-wield Kongou with Dying Night" }
       - slot: 2
-        name: Kongou
-        where: Yorinobu Arasaka's penthouse during The Heist
-        why: A suppressed Power pistol for quiet kills. There's only one, so it can't be paired with itself
+        name: "Kongou"
+        where: "Yorinobu Arasaka's penthouse during The Heist"
+        why: "A suppressed Power pistol for quiet kills. There's only one, so it can't be paired with itself"
       - slot: 3
-        name: Dying Night
-        where: Wilson in Watson, during The Gun side job
-        why: A strong early Power pistol, and your other gun before you have the Doradas
+        name: "Dying Night"
+        where: "Wilson or the 2nd Amendment shop in V's building"
+        why: "A strong early Power pistol, and your other gun before you have the Doradas"
   - from: 10
     to: 19
     cyberware:
-      - id: dynalar-sandevistan
-        tier: 2
-        where: Any ripperdoc
-        why: One guide lists Dynalar from level 10, with a 50% time slow. Falcon replaces it at level 30
-      - id: ballistic-coprocessor
-        tier: 2
-        where: Any ripperdoc
-        why: Improves Power weapon ricochets, and the guides pick it for your hands
-      - id: kerenzikov
-        tier: 2
-        where: Any ripperdoc
-        why: The dual-wield guides pick it for your nervous system
-      - id: reinforced-tendons
-        tier: 2
-        where: Any ripperdoc
-        why: Double jump, for more ways to stay mobile
-      - id: blood-pump
-        tier: 2
-        where: Any ripperdoc
-        why: The guides pick it for survivability. Buy it last if capacity runs short
+      - { id: zetatech-sandevistan-mk1, tier: 2, where: "Any ripperdoc. About 6,000 to 7,500 eddies", why: "Your first Sandevistan. It needs Reflexes 6 and adds crit chance" }
+      - { id: ballistic-coprocessor, tier: 2, where: "Any ripperdoc", why: "Improves Power weapon ricochets, and the guides pick it for your hands" }
+      - { id: kerenzikov, tier: 2, where: "Any ripperdoc", why: "The dual-wield guides pick it for your nervous system" }
+      - { id: reinforced-tendons, tier: 2, where: "Any ripperdoc", why: "Double jump, which also works with Air Dash later" }
+      - { id: blood-pump, tier: 2, where: "Any ripperdoc", why: "Healing on demand. Buy it last if capacity runs short" }
     weaponSlots:
       - slot: 1
-        name: La Chingona Dorada
-        where: The ofrenda at El Coyote Cojo, or Herold at the Dogtown black market
-        why: Your main weapons. Get them now if you haven't yet
-        dualWith:
-          name: La Chingona Dorada
-          where: Same ofrenda or vendor
-          why: Until you have both, keep dual-wielding Kongou with Dying Night
+        name: "La Chingona Dorada"
+        where: "Send Jackie to his family at the end of The Heist, finish the Heroes side job, wait 24 hours, then check the ofrenda at El Coyote Cojo. Or buy it from Herold at the Dogtown black market, in EBM Petrochem Stadium, reportedly only if you didn't send Jackie to Viktor"
+        why: "Your main weapons, and you can own two"
+        dualWith: { name: "La Chingona Dorada", where: "Same ofrenda or vendor", why: "Until you have both, dual-wield Kongou with Dying Night" }
       - slot: 2
-        name: Any Power sniper rifle
-        where: Vendors or loot
-        why: Covers long range, and shares the Cool tree with handguns
+        name: "Any Power sniper rifle"
+        where: "Vendors or loot"
+        why: "Covers long range, and shares the Cool tree with handguns"
       - slot: 3
-        name: Any assault rifle
-        where: Vendors or loot
-        why: Covers middle range. Keep Kongou here if you'd rather have a quiet option
+        name: "Any Power assault rifle"
+        where: "Vendors or loot"
+        why: "Covers middle range. Keep Kongou here if you'd rather have a quiet option"
+  - from: 20
+    to: 29
+    cyberware:
+      - { id: zetatech-sandevistan-mk2, tier: 3, where: "Any ripperdoc. About 10,000 eddies", why: "A longer time slow and more crit chance. It needs Reflexes 9" }
+      - { id: ballistic-coprocessor, tier: 3, where: "Any ripperdoc", why: "Improves Power weapon ricochets, and the guides pick it for your hands" }
+      - { id: kerenzikov, tier: 3, where: "Any ripperdoc", why: "The dual-wield guides pick it for your nervous system" }
+      - { id: reinforced-tendons, tier: 3, where: "Any ripperdoc", why: "Double jump, which also works with Air Dash later" }
+      - { id: blood-pump, tier: 3, where: "Any ripperdoc", why: "Healing on demand. Buy it last if capacity runs short" }
+      - { id: biomonitor, tier: 3, where: "Any ripperdoc", why: "Guides pair it with the Blood Pump for survivability" }
+    weaponSlots:
+      - slot: 1
+        name: "La Chingona Dorada"
+        where: "Send Jackie to his family at the end of The Heist, finish the Heroes side job, wait 24 hours, then check the ofrenda at El Coyote Cojo. Or buy it from Herold at the Dogtown black market, in EBM Petrochem Stadium, reportedly only if you didn't send Jackie to Viktor"
+        why: "Your main weapons, and you can own two"
+        dualWith: { name: "La Chingona Dorada", where: "Same ofrenda or vendor", why: "Until you have both, dual-wield Kongou with Dying Night" }
+      - slot: 2
+        name: "Overwatch"
+        where: "Get Saul out in Riders on the Storm, Panam's side job. You can miss this reward"
+        why: "An iconic Power sniper with a silencer and faster reloads"
+      - slot: 3
+        name: "Any Power assault rifle"
+        where: "Vendors or loot"
+        why: "Covers middle range. Keep Kongou here if you'd rather have a quiet option"
+  - from: 30
+    to: 39
+    cyberware:
+      - { id: zetatech-sandevistan-mk3, tier: 4, where: "Any ripperdoc. About 16,000 eddies", why: "Lasts even longer with more crit chance. It needs Reflexes 12, which you reach at level 33" }
+      - { id: ballistic-coprocessor, tier: 4, where: "Any ripperdoc", why: "Improves Power weapon ricochets, and the guides pick it for your hands" }
+      - { id: kerenzikov, tier: 4, where: "Any ripperdoc", why: "The dual-wield guides pick it for your nervous system" }
+      - { id: reinforced-tendons, tier: 4, where: "Any ripperdoc", why: "Double jump, which also works with Air Dash later" }
+      - { id: blood-pump, tier: 4, where: "Any ripperdoc", why: "Healing on demand. Buy it last if capacity runs short" }
+      - { id: biomonitor, tier: 4, where: "Any ripperdoc", why: "Guides pair it with the Blood Pump for survivability" }
+    weaponSlots:
+      - slot: 1
+        name: "La Chingona Dorada"
+        where: "Send Jackie to his family at the end of The Heist, finish the Heroes side job, wait 24 hours, then check the ofrenda at El Coyote Cojo. Or buy it from Herold at the Dogtown black market, in EBM Petrochem Stadium, reportedly only if you didn't send Jackie to Viktor"
+        why: "Your main weapons, and you can own two"
+        dualWith: { name: "La Chingona Dorada", where: "Same ofrenda or vendor", why: "Until you have both, dual-wield Kongou with Dying Night" }
+      - slot: 2
+        name: "Overwatch"
+        where: "Get Saul out in Riders on the Storm, Panam's side job. You can miss this reward"
+        why: "An iconic Power sniper with a silencer and faster reloads"
+      - slot: 3
+        name: "Hawk"
+        where: "The Dogtown hideout after Myers and Reed leave, during Lucretia My Reflection"
+        why: "An iconic Power rifle whose headshots weaken and mark enemies, which suits this headshot build"
+  - from: 40
+    to: 49
+    cyberware:
+      - { id: apogee-sandevistan, tier: 5, where: "Any ripperdoc", why: "The guides' top pick, with up to 85% time slow plus headshot and crit bonuses. Its Reflexes requirement is unconfirmed" }
+      - { id: ballistic-coprocessor, tier: 5, where: "Any ripperdoc", why: "Improves Power weapon ricochets, and the guides pick it for your hands" }
+      - { id: kerenzikov, tier: 5, where: "Any ripperdoc", why: "The dual-wield guides pick it for your nervous system" }
+      - { id: reinforced-tendons, tier: 5, where: "Any ripperdoc", why: "Double jump, which also works with Air Dash later" }
+      - { id: blood-pump, tier: 5, where: "Any ripperdoc", why: "Healing on demand. Buy it last if capacity runs short" }
+      - { id: biomonitor, tier: 5, where: "Any ripperdoc", why: "Guides pair it with the Blood Pump for survivability" }
+      - { id: cockatrice-optics, tier: 5, where: "Ripperdocs or Dogtown airdrops. Exact source unconfirmed", why: "The guides pick these optics for your face slot" }
+      - { id: peripheral-inverse, tier: 5, where: "Ripperdocs or Dogtown airdrops. Exact source unconfirmed", why: "The guides pick this for your integumentary slot, though it uses a lot of capacity" }
+      - { id: axolotl, tier: 5, where: "Finish all of Regina's gigs, or buy it from a Dogtown ripperdoc", why: "Lowers cyberware cooldowns after kills, so your Sandevistan comes back faster" }
+    weaponSlots:
+      - slot: 1
+        name: "La Chingona Dorada"
+        where: "Send Jackie to his family at the end of The Heist, finish the Heroes side job, wait 24 hours, then check the ofrenda at El Coyote Cojo. Or buy it from Herold at the Dogtown black market, in EBM Petrochem Stadium, reportedly only if you didn't send Jackie to Viktor"
+        why: "Your main weapons, and you can own two"
+        dualWith: { name: "La Chingona Dorada", where: "Same ofrenda or vendor", why: "Until you have both, dual-wield Kongou with Dying Night" }
+      - slot: 2
+        name: "Overwatch"
+        where: "Get Saul out in Riders on the Storm, Panam's side job. You can miss this reward"
+        why: "An iconic Power sniper with a silencer and faster reloads"
+      - slot: 3
+        name: "Hawk"
+        where: "The Dogtown hideout after Myers and Reed leave, during Lucretia My Reflection"
+        why: "An iconic Power rifle whose headshots weaken and mark enemies, which suits this headshot build"
+  - from: 50
+    to: 60
+    cyberware:
+      - { id: apogee-sandevistan, tier: 5, where: "Any ripperdoc", why: "Keep it to the end" }
+      - { id: ballistic-coprocessor, tier: 5, where: "Any ripperdoc", why: "Improves Power weapon ricochets, and the guides pick it for your hands" }
+      - { id: kerenzikov, tier: 5, where: "Any ripperdoc", why: "The dual-wield guides pick it for your nervous system" }
+      - { id: reinforced-tendons, tier: 5, where: "Any ripperdoc", why: "Double jump, which also works with Air Dash later" }
+      - { id: blood-pump, tier: 5, where: "Any ripperdoc", why: "Healing on demand. Buy it last if capacity runs short" }
+      - { id: biomonitor, tier: 5, where: "Any ripperdoc", why: "Guides pair it with the Blood Pump for survivability" }
+      - { id: cockatrice-optics, tier: 5, where: "Ripperdocs or Dogtown airdrops. Exact source unconfirmed", why: "The guides pick these optics for your face slot" }
+      - { id: peripheral-inverse, tier: 5, where: "Ripperdocs or Dogtown airdrops. Exact source unconfirmed", why: "The guides pick this for your integumentary slot, though it uses a lot of capacity" }
+      - { id: axolotl, tier: 5, where: "Finish all of Regina's gigs, or buy it from a Dogtown ripperdoc", why: "Lowers cyberware cooldowns after kills, so your Sandevistan comes back faster" }
+      - { id: shock-absorber, tier: 5, where: "Any ripperdoc", why: "Fills the second hand slot from Ambidextrous, and the guides pick it for your hands" }
+    weaponSlots:
+      - slot: 1
+        name: "La Chingona Dorada"
+        where: "Send Jackie to his family at the end of The Heist, finish the Heroes side job, wait 24 hours, then check the ofrenda at El Coyote Cojo. Or buy it from Herold at the Dogtown black market, in EBM Petrochem Stadium, reportedly only if you didn't send Jackie to Viktor"
+        why: "Your main weapons, and you can own two"
+        dualWith: { name: "La Chingona Dorada", where: "Same ofrenda or vendor", why: "Until you have both, dual-wield Kongou with Dying Night" }
+      - slot: 2
+        name: "Overwatch"
+        where: "Get Saul out in Riders on the Storm, Panam's side job. You can miss this reward"
+        why: "An iconic Power sniper with a silencer and faster reloads"
+      - slot: 3
+        name: "Hawk"
+        where: "The Dogtown hideout after Myers and Reed leave, during Lucretia My Reflection"
+        why: "An iconic Power rifle whose headshots weaken and mark enemies, which suits this headshot build"

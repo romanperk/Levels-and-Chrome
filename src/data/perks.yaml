@@ -1,20 +1,73 @@
-- { id: double-trouble, name: Double Trouble, tree: cool, requires: 9 }
-# Dual-wield branch. Requirements from third-party guides for patch 2.5; prerequisites inferred from the tree layout.
-- { id: double-trouble-2, name: Double Trouble Rank 2 (Heywood Hurricane), tree: cool, requires: 9, prerequisite: double-trouble }
-- { id: two-right-hands, name: Two Right Hands, tree: cool, requires: 9, prerequisite: double-trouble }
-- { id: triple-tequila, name: Triple Tequila, tree: cool, requires: 9, prerequisite: double-trouble }
+# Requirements from Game8 (updated May 2025). Ranks and prerequisites from eip.gg (2023), partly unverified.
+# Double Trouble details from guides written for patch 2.5. Nothing here is rechecked in game yet.
+
+# Cool
+- { id: double-trouble, name: "Double Trouble", tree: cool, requires: 9 }
+- { id: double-trouble-2, name: "Double Trouble Rank 2 (Heywood Hurricane)", tree: cool, requires: 9, prerequisite: double-trouble }
+- { id: two-right-hands, name: "Two Right Hands", tree: cool, requires: 9, prerequisite: double-trouble }
+- { id: triple-tequila, name: "Triple Tequila", tree: cool, requires: 9, prerequisite: double-trouble }
 - { id: keep-em-comin, name: "Keep 'Em Comin'", tree: cool, requires: 9, prerequisite: double-trouble }
-- { id: splash-of-love, name: Splash of Love, tree: cool, requires: 9, prerequisite: double-trouble-2 }
-- { id: focus, name: Focus, tree: cool, requires: 9 }
-# shortcut: Dash requirement assumed from the lowest perk tier, confirm in game.
-- { id: dash, name: Dash, tree: reflexes, requires: 4 }
-- { id: all-things-cyber, name: All Things Cyber, tree: technical, requires: 4 }
-- { id: all-things-cyber-2, name: All Things Cyber Rank 2, tree: technical, requires: 4, prerequisite: all-things-cyber }
-- { id: renaissance-punk, name: Renaissance Punk, tree: technical, requires: 9, prerequisite: all-things-cyber-2 }
-# shortcut: requirements below are assumed, because no source we could read gives them. Confirm in game.
-- { id: license-to-chrome, name: License to Chrome, tree: technical, requires: 9 }
-- { id: air-dash, name: Air Dash, tree: reflexes, requires: 9, prerequisite: dash }
-- { id: cant-touch-this, name: "Can't Touch This", tree: reflexes, requires: 9 }
-- { id: steady-grip, name: Steady Grip, tree: reflexes, requires: 9 }
-- { id: muscle-memory, name: Muscle Memory, tree: reflexes, requires: 9 }
-- { id: adrenaline-rush, name: Adrenaline Rush, tree: body, requires: 9 }
+- { id: splash-of-love, name: "Splash of Love", tree: cool, requires: 9, prerequisite: double-trouble-2 }
+- { id: focus, name: "Focus", tree: cool, requires: 9 }
+- { id: focus-2, name: "Focus Rank 2", tree: cool, requires: 9, prerequisite: focus }
+- { id: head-to-head, name: "Head to Head", tree: cool, requires: 9, prerequisite: focus-2 }
+- { id: deep-breath, name: "Deep Breath", tree: cool, requires: 9, prerequisite: head-to-head }
+- { id: deadeye, name: "Deadeye", tree: cool, requires: 15, prerequisite: focus-2 }
+- { id: deadeye-2, name: "Deadeye Rank 2", tree: cool, requires: 15, prerequisite: deadeye }
+- { id: deadeye-3, name: "Deadeye Rank 3", tree: cool, requires: 15, prerequisite: deadeye-2 }
+- { id: high-noon, name: "High Noon", tree: cool, requires: 15, prerequisite: deadeye-3 }
+- { id: long-shot, name: "Long Shot", tree: cool, requires: 15, prerequisite: deadeye-3 }
+- { id: california-reaper, name: "California Reaper", tree: cool, requires: 15, prerequisite: deadeye-3 }
+- { id: quick-draw, name: "Quick Draw", tree: cool, requires: 15, prerequisite: deadeye-3 }
+- { id: run-n-gun, name: "Run 'N' Gun", tree: cool, requires: 20, prerequisite: deadeye-3 }
+- { id: nerves-of-tungsten-steel, name: "Nerves of Tungsten-Steel", tree: cool, requires: 20, prerequisite: deadeye-3 }
+
+# Reflexes
+- { id: slippery, name: "Slippery", tree: reflexes, requires: 4 }
+- { id: muscle-memory, name: "Muscle Memory", tree: reflexes, requires: 4, prerequisite: slippery }
+- { id: multitasker, name: "Multitasker", tree: reflexes, requires: 4, prerequisite: slippery }
+- { id: dash, name: "Dash", tree: reflexes, requires: 9, prerequisite: slippery }
+- { id: dash-2, name: "Dash Rank 2", tree: reflexes, requires: 9, prerequisite: dash }
+- { id: steady-grip, name: "Steady Grip", tree: reflexes, requires: 9, prerequisite: dash-2 }
+- { id: cant-touch-this, name: "Can't Touch This", tree: reflexes, requires: 9, prerequisite: dash-2 }
+- { id: air-dash, name: "Air Dash", tree: reflexes, requires: 15, prerequisite: dash-2 }
+- { id: air-dash-2, name: "Air Dash Rank 2", tree: reflexes, requires: 15, prerequisite: air-dash }
+- { id: air-dash-3, name: "Air Dash Rank 3", tree: reflexes, requires: 15, prerequisite: air-dash-2 }
+- { id: aerodynamic, name: "Aerodynamic", tree: reflexes, requires: 15, prerequisite: air-dash-3 }
+- { id: tailwind, name: "Tailwind", tree: reflexes, requires: 20, prerequisite: air-dash-2 }
+
+# Technical
+- { id: glutton-for-war, name: "Glutton for War", tree: technical, requires: 4 }
+- { id: health-freak, name: "Health Freak", tree: technical, requires: 9, prerequisite: glutton-for-war }
+- { id: health-freak-2, name: "Health Freak Rank 2", tree: technical, requires: 9, prerequisite: health-freak }
+- { id: all-things-cyber, name: "All Things Cyber", tree: technical, requires: 9 }
+- { id: all-things-cyber-2, name: "All Things Cyber Rank 2", tree: technical, requires: 9, prerequisite: all-things-cyber }
+- { id: renaissance-punk, name: "Renaissance Punk", tree: technical, requires: 9, prerequisite: all-things-cyber-2 }
+- { id: driver-update, name: "Driver Update", tree: technical, requires: 9, prerequisite: all-things-cyber-2 }
+- { id: license-to-chrome, name: "License to Chrome", tree: technical, requires: 15, prerequisite: all-things-cyber-2 }
+- { id: license-to-chrome-2, name: "License to Chrome Rank 2", tree: technical, requires: 15, prerequisite: license-to-chrome }
+- { id: license-to-chrome-3, name: "License to Chrome Rank 3", tree: technical, requires: 15, prerequisite: license-to-chrome-2 }
+- { id: extended-warranty, name: "Extended Warranty", tree: technical, requires: 15, prerequisite: license-to-chrome-3 }
+- { id: ambidextrous, name: "Ambidextrous", tree: technical, requires: 15, prerequisite: license-to-chrome-3 }
+- { id: cyborg, name: "Cyborg", tree: technical, requires: 15, prerequisite: license-to-chrome-3 }
+- { id: pyromania, name: "Pyromania", tree: technical, requires: 15, prerequisite: health-freak-2 }
+- { id: pyromania-2, name: "Pyromania Rank 2", tree: technical, requires: 15, prerequisite: pyromania }
+- { id: pyromania-3, name: "Pyromania Rank 3", tree: technical, requires: 15, prerequisite: pyromania-2 }
+- { id: edgerunner, name: "Edgerunner", tree: technical, requires: 20, prerequisite: license-to-chrome-3, capacityBonus: 50 }
+- { id: ticking-time-bomb, name: "Ticking Time Bomb", tree: technical, requires: 20, prerequisite: pyromania-3 }
+
+# Body
+- { id: painkiller, name: "Painkiller", tree: body, requires: 4 }
+- { id: comeback-kid, name: "Comeback Kid", tree: body, requires: 4, prerequisite: painkiller }
+- { id: speed-junkie, name: "Speed Junkie", tree: body, requires: 4, prerequisite: painkiller }
+- { id: dorph-head, name: "Dorph-head", tree: body, requires: 4, prerequisite: painkiller }
+- { id: adrenaline-rush, name: "Adrenaline Rush", tree: body, requires: 15, prerequisite: painkiller }
+- { id: adrenaline-rush-2, name: "Adrenaline Rush Rank 2", tree: body, requires: 15, prerequisite: adrenaline-rush }
+- { id: adrenaline-rush-3, name: "Adrenaline Rush Rank 3", tree: body, requires: 15, prerequisite: adrenaline-rush-2 }
+- { id: juggernaut, name: "Juggernaut", tree: body, requires: 15, prerequisite: adrenaline-rush-3 }
+- { id: calm-mind, name: "Calm Mind", tree: body, requires: 15, prerequisite: adrenaline-rush-3 }
+- { id: unstoppable-force, name: "Unstoppable Force", tree: body, requires: 15, prerequisite: adrenaline-rush-3 }
+
+# Relic. The first perk in each branch costs 3 points.
+- { id: vulnerability-analytics, name: "Vulnerability Analytics", tree: relic, requires: 0, cost: 3, phantomLiberty: true }
+- { id: machine-learning, name: "Machine Learning", tree: relic, requires: 0, prerequisite: vulnerability-analytics, phantomLiberty: true }
